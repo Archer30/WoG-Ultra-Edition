@@ -1,0 +1,19 @@
+Language
+English
+Russian
+Save
+Town
+Castle
+Rampart
+Tower
+Inferno
+Necropolis
+Dungeon
+Stronghold
+Fortress
+Conflux
+Structure
+Set build depencies for structure
+Dwellers
+Primary
+Alternative

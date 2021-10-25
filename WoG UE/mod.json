@@ -1,0 +1,32 @@
+{
+	"caption": {
+		"en_US": "WoG Ultra Edition",
+		"ru_RU": "WoG Ultra Edition"
+	},
+	"description": {
+		"full": {
+			"en_US": "EN.txt",
+			"ru_RU": "readme.txt"
+		},
+		"short": {
+			"en_US": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Version: v2.5.3 ********************\r\n               \r\n\r\nNew global mod which adds a lot of content to the game. ",
+			"ru_RU": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Версия: v2.5.3 ********************\r\n                \r\n\r\nНовый глобальный мод, вносящий в игру множество интересных изменений. "
+		}
+	},
+	"author": "Raistlin",
+	"homepage": "http://wforum.heroes35.net/showthread.php?tid=5571",
+	"icon": {
+		"file": "UE.ico",
+		"index": 0
+	},
+	"mod_version": "v2.5.3",
+	"priority": 2,
+	"compatibility": {
+		"class": "default",
+		"entries": {}
+	},
+	"platform": "era",
+	"info_version": "1.0",
+	"plugins": {},
+	"category": "gameplay"
+}

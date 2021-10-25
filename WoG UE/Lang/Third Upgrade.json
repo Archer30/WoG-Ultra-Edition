@@ -1,0 +1,19 @@
+{
+
+  "Third_Upgrade_Mod": {
+			"Creature_Specialist": 				"{~r}Creature Specialist{~}
+
+												Increases the Attack, Defense and Speed skills of any @Crea1@, @Crea2@ or @Crea3@ for each level attained after @level@th level.
+
+												When in combat @Hero@ further improves @sex@ creatures with:
+												Att/Def: {+@attack@}
+												Damage: {+@damage@}
+												Health: {+@health@%%}",
+												
+			"his": 								"his",
+												
+			"her": 								"her"
+
+			}										 
+
+}

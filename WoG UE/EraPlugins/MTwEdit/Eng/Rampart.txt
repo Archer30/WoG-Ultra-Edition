@@ -1,0 +1,44 @@
+Magic Guild Level 1
+Magic Guild Level 2
+Magic Guild Level 3
+Magic Guild Level 4
+Magic Guild Level 5
+Tavern
+---
+Fort
+Citadel
+Castle
+Village Hall
+Town Hall
+City Hall
+Capitol
+Marketplace
+Resource Silo
+Blacksmith
+Mystic Pond
+Miners' Cuild
+Upg. Miners' Cuild
+---
+Fountain of Fortune
+Tresury
+---
+Dendroid Saplings
+Upg. Dendroid Saplings
+Spirit Guardian
+---
+---
+---
+Centaur Stables
+Dwarf Cottage
+Homestead
+Enchanted Spring
+Dendroid Arches
+Unicorn Glade
+Dragon Cliffs
+Upg. Centaur Stables
+Upg. Dwarf Cottage
+Upg. Homestead
+Upg. Enchanted Spring
+Upg. Dendroid Arches
+Upg. Unicorn Glade
+Upg. Dragon Cliffs

@@ -1,0 +1,16 @@
+ZVSE
+
+***  Скрипт на добавление дополнительных боевых треков
+
+!?BA0&1000;
+!!VRy50:S1 R6;
+!!VRz2:S^COMBAT0%Y50.mp3^;
+!!VRz1:S^COMBAT01.mp3^;
+!!SN:R^%Z1^/^%Z2^;
+!!VRz1:S^COMBAT02.mp3^;
+!!SN:R^%Z1^/^%Z2^;
+!!VRz1:S^COMBAT03.mp3^;
+!!SN:R^%Z1^/^%Z2^;
+!!VRz1:S^COMBAT04.mp3^;
+!!SN:R^%Z1^/^%Z2^;
+

@@ -1,0 +1,44 @@
+Magic Guild Level 1
+Magic Guild Level 2
+Magic Guild Level 3
+Magic Guild Level 4
+Magic Guild Level 5
+Tavern
+---
+Fort
+Citadel
+Castle
+Village Hall
+Town Hall
+City Hall
+Capitol
+Marketplace
+Resource Silo
+Blacksmith
+Artifact Merchants
+Mushroom Rings
+Upg. Mushroom Rings
+---
+Mana Vortex
+Portal of Summoning
+Battle Scholar Academy
+---
+---
+Guardian of Earth
+---
+---
+---
+Warren
+Harpy Loft
+Pillar of Eyes
+Chapel of Stilled Voices
+Labyrinth
+Manticore Lair
+Dragon Cave
+Upg. Warren
+Upg. Harpy Loft
+Upg. Pillar of Eyes
+Upg. Stilled Voices
+Upg. Labyrinth
+Upg. Manticore Lair
+Upg. Dragon Cave

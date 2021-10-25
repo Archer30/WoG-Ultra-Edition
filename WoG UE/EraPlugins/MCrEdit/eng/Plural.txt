@@ -1,0 +1,1001 @@
+Pikemen
+Halberdiers
+Archers
+Marksmen
+Griffins
+Royal Griffins
+Swordsmen
+Crusaders
+Monks
+Zealots
+Cavaliers
+Champions
+Angels
+Archangels
+Centaurs
+Centaur Captains
+Dwarves
+Battle Dwarves
+Wood Elves
+Grand Elves
+Pegasi
+Silver Pegasi
+Dendroid Guards
+Dendroid Soldiers
+Unicorns
+War Unicorns
+Green Dragons
+Gold Dragons
+Gremlins
+Master Gremlins
+Stone Gargoyles
+Obsidian Gargoyles
+Stone Golems
+Iron Golems
+Magi
+Arch Magi
+Genies
+Master Genies
+Nagas
+Naga Queens
+Giants
+Titans
+Imps
+Familiars
+Gogs
+Magogs
+Hell Hounds
+Cerberi
+Demons
+Horned Demons
+Pit Fiends
+Pit Lords
+Efreet
+Efreet Sultans
+Devils
+Arch Devils
+Skeletons
+Skeleton Warriors
+Walking Dead
+Zombies
+Wights
+Wraiths
+Vampires
+Vampire Lords
+Liches
+Power Liches
+Black Knights
+Dread Knights
+Bone Dragons
+Ghost Dragons
+Troglodytes
+Infernal Troglodytes
+Harpies
+Harpy Hags
+Beholders
+Evil Eyes
+Medusas
+Medusa Queens
+Minotaurs
+Minotaur Kings
+Manticores
+Scorpicores
+Red Dragons
+Black Dragons
+Goblins
+Hobgoblins
+Wolf Riders
+Wolf Raiders
+Orcs
+Orc Chieftains
+Ogres
+Ogre Magi
+Rocs
+Thunderbirds
+Cyclopes
+Cyclops Kings
+Behemoths
+Ancient Behemoths
+Gnolls
+Gnoll Marauders
+Lizardmen
+Lizard Warriors
+Gorgons
+Mighty Gorgons
+Serpent Flies
+Dragon Flies
+Basilisks
+Greater Basilisks
+Wyverns
+Wyvern Monarchs
+Hydras
+Chaos Hydras
+Air Elementals
+Earth Elementals
+Fire Elementals
+Water Elementals
+Gold Golems
+Diamond Golems
+Pixies
+Sprites
+Psychic Elementals
+Magic Elementals
+Sea Serpents
+Ice Elementals
+Scavenger Spiders
+Magma Elementals
+Scavenger Wasps
+Storm Elementals
+Underground Devourers
+Energy Elementals
+Firebirds
+Phoenixes
+Azure Dragons
+Crystal Dragons
+Faerie Dragons
+Rust Dragons
+Enchanters
+Sharpshooters
+Halflings
+Peasants
+Boars
+Mummies
+Nomads
+Rogues
+Trolls
+Catapults
+Ballistas
+First Aid Tents
+Ammo Carts
+Arrow Towers
+Supreme Archangels
+Diamond Dragons
+Lords of Thunder
+Hell Barons
+Blood Dragons
+Darkness Dragons
+Ghost Behemoths
+Hell Hydras
+Sacred Phoenixes
+Ghosts
+Emissaries of War
+Emissaries of Peace
+Emissaries of Mana
+Emissaries of Lore
+Fire Messengers
+Earth Messengers
+Air Messengers
+Water Messengers
+Gorynyches
+War Zealots
+Arctic Sharpshooters
+Lava Sharpshooters
+Nightmares
+Santa Gremlins
+Templars
+Hierophants
+Temple Guardians
+Demonesses
+Soul Eaters
+Illithids
+Orc Warlords
+Shamans
+Theurgists
+Templars
+Hierophants
+Temple Guardians
+Demonesses
+Soul Eaters
+Illithids
+Orc Warlords
+Shamans
+Theurgists
+Sylvan Centaurs
+Sorceresses
+Werewolves
+Hell Steeds
+Dragoliches
+Templar
+Crossbowmen
+Cesar Griffins
+Paladins
+Holy Champions
+Seraphs
+Leprechauns
+Satyr Elfs
+Forest Guards
+Legendary Unicorns
+Faun Elfs
+Chimeras
+Steel Golems
+Warrior Genies
+Naga Empresses
+Guardians of Zeus
+Succubi
+Nightmares
+Creatures from Hell
+Hell Steeds
+Pit Masters
+Efreet Rajahs
+Witches
+Rogue Leaders
+Ghouls
+Ancient Liches
+Reapers
+Mechanized Zombies
+Troglodyte Torturers
+Deadly Eyes
+Harpy Sanguinaries
+Medusa Empresses
+Legendary Minotaurs
+Damned Minotaurs
+Abyssal Dragons
+Hobgoblin Overlords
+Wolf Rider Killers
+Gladiator Orcs
+Ogre Leaders
+Lightningbirds
+Thunder Dragons
+Cyclop Demolishers
+Centagnolls
+Elite Lizards
+Lizard Guardsmans
+Lizard Captains
+Acid Wyvern
+Acid Gorgons
+Terrible Hydras
+Fairies
+Hurricane Elementals
+Sea Nymphs
+Plasma Elementals
+Spirits of the Ocean
+Astral Elementals
+Divine Phoenixes
+Forest Dragons
+Necross Dragons
+Swamp Dragons
+Faun Elfs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Witches
+Rogue Leaders
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

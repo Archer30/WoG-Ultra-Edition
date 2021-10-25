@@ -1,0 +1,44 @@
+Magic Guild Level 1
+Magic Guild Level 2
+Magic Guild Level 3
+Magic Guild Level 4
+Magic Guild Level 5
+Tavern
+---
+Fort
+Citadel
+Castle
+Village Hall
+Town Hall
+City Hall
+Capitol
+Marketplace
+Resource Silo
+Blacksmith
+Escape Tunnel
+Mess Hall
+Upg. Mess Hall
+---
+Freelancer's Guild
+Ballista Yard
+Hall of Valhalla
+---
+---
+Warlords' Monument
+---
+---
+---
+Goblin Barracks
+Wolf Pen
+Orc Tower
+Ogre Fort
+Cliff Nest
+Cyclops Cave
+Behemoth Lair
+Upg. Goblin Barracks
+Upg. Wolf Pen
+Upg. Orc Tower
+Upg. Ogre Fort
+Upg. Cliff Nest
+Upg. Cyclops Cave
+Upg. Behemoth Lair

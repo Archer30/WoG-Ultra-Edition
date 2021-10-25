@@ -1,0 +1,54 @@
+ZVSE
+
+!?MF1;  [Magogs Fireball-Attack doesnt damage own troops]
+**SN:W^Magog_Fireball_Enable^/?y1;
+**FU&y1=0:E;
+!!BG:N?y1;  [Get attacking stack number]
+!!MF:N?y4;  [Get defending stack number]
+!!BMy1:I?y5; [Get attacking stack side]
+!!BMy4:I?y6; [Get defending stack side]
+!!UN:C42149568/4/?y10;[Judgement basis (028326c0)]
+!!MF&y10=4454752/y5=y6:E0; [Disable taking damage if Magog Fireball and own team]
+
+*?MR2;  [Magogs Fireball-Cast that comes with Stack Expierence doesnt damage own troops]
+
+**SN:W^Magog_Fireball_Enable^/?y1;
+**FU&y1=0:E;
+**BG:A?y1;                                                                      [Aktion in y1]
+**MR:S?y2 F?y3;
+**if&y1=7/y2=21/y3<=105:;  Fireball always does 105 damage
+**MR:N?y10;
+**BMy10:I?y11;
+**MR&y11=0:F100;  Disable Magic damage for attacker side from Fireball
+**en;
+
+*?FU(OnBattleRegeneratePhase);
+**SN:W^Magog_Fireball_Switch^/-1;
+**BA:Q?y1;
+**FU&y1=1:E;                                                                    [Exit in Quick Combat]
+
+**SN:X?y1;        Event parameter
+**BMy1:T?y2;      Acting Monster Type
+**SN&y2=45:W^Magog_Fireball_Switch^/y1;
+
+*?CM4;
+**CM:F?y1 I?y2;
+**FU|y1<>512/y2<>2010:E;  Exit if not rightclick on defend Icon
+**SN:W^Magog_Fireball_Switch^/?y3;
+**FU&y3=-1:E;
+**BMy3:T?y4;      Acting Monster Type
+**if&y4=45:;
+
+**VRz1:S^Should the Magog Fireball attack damage own troops^;
+**VRz2:S^Yes^;
+**VRz3:S^No^;
+
+**VRv3:S0;
+**IF:G1/3/0/1/2/3/0/0/0/0/0/0/0/0/0/;
+**SN&v3=1:W^Magog_Fireball_Enable^/0;
+**SN&v3=2:W^Magog_Fireball_Enable^/1;
+**en:;
+
+*?BA0;
+**SN:W^Magog_Fireball_Enable^/1;
+

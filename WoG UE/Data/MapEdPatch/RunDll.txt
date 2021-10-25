@@ -1,0 +1,2 @@
+; A list of libraries loaded on Map Editor start. See Help for more info,
+Data\MapEdPatch\TyphonME.DLL

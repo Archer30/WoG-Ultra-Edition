@@ -1,0 +1,44 @@
+Magic Guild Level 1
+Magic Guild Level 2
+Magic Guild Level 3
+Magic Guild Level 4
+Magic Guild Level 5
+Tavern
+---
+Fort
+Citadel
+Castle
+Village Hall
+Town Hall
+City Hall
+Capitol
+Marketplace
+Resource Silo
+Blacksmith
+---
+Birthing Pools
+Upg. Birthing Pools
+---
+Brimstone Stormclouds
+Castle Gate
+Order of Fire
+Cages
+Upg. Cages
+Deity of Fire
+---
+---
+---
+Imp Crucible
+Hall of Sins
+Kennels
+Demon Gate
+Hell Hole
+Fire Lake
+Forsaken Palace
+Upg. Imp Crucible
+Upg. Hall of Sins
+Upg. Kennels
+Upg. Demon Gate
+Upg. Hell Hole
+Upg. Fire Lake
+Upg. Forsaken Palace

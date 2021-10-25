@@ -1,0 +1,44 @@
+ZVSE
+_WARNING_#1=IMPORTANT! This file is not in a plain text format. NEVER use any editor except ERM_S for making any kind of changes!
+ERMS_PoweredBy=ERM Scripter v. 2003.2.3.1842
+
+!#VRv590:S0; Константа, используемая другими скриптами
+
+*Настройка подсказок
+!#HT63/9:W46/1/10402;
+!#HT63/9:W46/0/10401;
+!#HT146/0:W46/1/10402;
+!#HT146/0:W46/0/10401;
+
+*Функция обновления статуса
+!?FU15038;
+!!IF:Wx16;
+!!VRw46:S0;
+
+*Старая башня
+!?OB63/9;
+!!IF&1000:M1/z104016;
+!!HE-1:O?y1;
+!!HE-1:P?y2/?y3/?y4;
+!!UN:Sy2/y3/y4/y1/10;
+
+!$OB63/9;
+!!IF:W-1;
+!!FU&w46=1:E;
+!!IF&1000:M1/z104017;
+!!VRw46:S1;
+!!HE-1:Wd350;
+
+!?OB146;
+!!IF&1000:M1/z104016;
+!!HE-1:O?y1;
+!!HE-1:P?y2/?y3/?y4;
+!!UN:Sy2/y3/y4/y1/10;
+
+!$OB146;
+!!IF:W-1;
+!!FU&w46=1:E;
+!!IF&1000:M1/z104017;
+!!VRw46:S1;
+!!HE-1:Wd350;
+

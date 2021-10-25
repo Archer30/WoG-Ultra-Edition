@@ -1,0 +1,44 @@
+Magic Guild Level 1
+Magic Guild Level 2
+Magic Guild Level 3
+Magic Guild Level 4
+Magic Guild Level 5
+Tavern
+Shipyard
+Fort
+Citadel
+Castle
+Village Hall
+Town Hall
+City Hall
+Capitol
+Marketplace
+Resource Silo
+Blacksmith
+Cage of Warlords
+Captain's Quarters
+Upg. Captain's Quarters
+---
+Glyphs of Fear
+Blood Obelisk
+---
+---
+---
+Carnivorous Plant
+---
+---
+---
+Gnoll Hut
+Lizard Den
+Serpent Fly Hive
+Basilisk Pit
+Gorgon Lair
+Wyvern Nest
+Hydra Pond
+Upg. Gnoll Hut
+Upg. Lizard Den
+Upg. Serpent Fly Hive
+Upg. Basilisk Pit
+Upg. Gorgon Lair
+Upg. Wyvern Nest
+Upg. Hydra Pond

@@ -1,0 +1,217 @@
+Language
+English
+Russian
+Creature #%d (singular name)
+Battle Def
+Level
+Sound prefix
+Native city
+Neutral
+Castle
+Rampart
+Tower
+Inferno
+Necropolis
+Dungeon
+Stronghold
+Fortress
+Conflux
+Flags
+Double wide
+Flying army
+Shooting army
+Breath attack
+Alive
+Catapult
+Siege weapon
+King 1
+King 2
+King 3
+Mind immune
+Ray shooting
+No melee penalty
+RESERVED
+Immune to fire spells
+Attack twice
+No enemy retaliation
+No moral penalty
+Undead
+Attack all around
+Advanced shooting
+Dead
+Summoned
+Clone
+Has Morale
+Waiting
+Done acting
+Defending
+Sacrifice
+Not change color
+Painted in gray
+Dragon
+Upgrade
+Change in Skeleton Transformer
+Ray color
+Ammo Def
+Advanced shooting
+Ballistic
+Retaliations
+No obstacle penalty
+Close range shooting
+Sharpshooter
+Range retaliation
+Strike and return
+Preventive counterstrike
+Attack abilities
+Magic
+Spell
+Immune
+Hate
+Resistance
+Gnome style
+C
+Golem style
+Always + Moral
+Always + Luck
+Fear
+Fearless
+Jousting bonus
+Immune to joust. bonus
+Magic aura
+Espionage
+Fire shield
+Magic mirror
+Magic channel
+Attacks with 3 heads
+Death blow
+C
+Regeneration
+Chance
+HP points
+Reduce defense
+Hero spell cost
+Drains enemy mana
+Rebirth
+Imposed spells
+Defense bonus
+Demonology
+Stun
+C
+Can not generate
+Save states
+Portrait
+Plural name
+Ability text
+Cost
+Fight Value
+AI Value
+Growth
+Health
+Speed
+Attack
+Defense
+Damage
+Min
+Max
+Shots
+Spells
+Adv. Map
+Low
+High
+Animation
+Upper-right Missile Offset
+Right Missile Offset
+Lower-right Missile Offset
+Missile Frame Angles
+Troop Count Location Offset
+Attack Climax Frame
+Time between fidgets
+Walk Animation Time
+Attack Animation Time
+Flight Animation Distance
+Prot. from shooting
+Fire wall
+Green
+White
+Black
+Red
+Blue
+None
+Fireball
+Death cloud
+None
+Basic
+Advanced
+Expert
+On the hero
+Bind
+Blind
+Disease
+Curse
+Age
+Stone gaze
+Paralyze
+Poison
+Acid breath
+None
+Drains life
+Thunderbolt
+Death stare
+Dispel helpful spells
+Acid breath
+None
+Resurrection
+Random friendly spell
+Friendly spell
+Protection from Water
+Protection from Earth
+Protection from Air
+Protection from Fire
+Random damage spell
+None
+Mode 1
+Mode 2
+Mode 3
+None
+Mode 1
+Mode 2
+Mode 3
+Mode 4
+Mode 5
+Mode 6
+Mode 7
+Mode 8
+Mode 9
+None
+Spell level 1
+Spell levels 1-2
+Spell levels 1-3
+Spell levels 1-4
+All spells
+Meteor Shower, Blind
+Lightning Bolt, Chain Lightning, Titan's Bolt, Armageddon
+Ice Bolt, Frost Ring
+None
+Devil, Arch Devil
+Efreeti, Efreet Sultan
+Black Dragon
+Genie, Master Genie
+Angel, Archangel
+Titan
+None
+Damage from spells reduced 50%
+Damage from spells reduced 70%
+Damage X 2 (Armageddon, Lightning Bolt, Chain Lightning, Titan's Bolt)
+Damage X 2 (Meteor Shower)
+Damage X 2 (Ice Bolt, Frost Ring, Blizzard)
+Damage X 2 (Fireball, Inferno, Armageddon)
+Damage from spells reduced 85%
+Damage from spells reduced 95%
+None
+None
+Ordinary
+Always
+No skill
+Basic
+Advanced
+Expert
