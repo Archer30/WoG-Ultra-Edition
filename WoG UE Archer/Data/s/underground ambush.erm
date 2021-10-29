@@ -16,18 +16,15 @@ ZVSE2
 ; The hero defeated the guards - then the guards from the gate would be cleared.
 ; The hero failed to defeat the guards - then the guards of the gate would be reduced by the amount that were killed in the battle.
 
-; Guards not defeated would be accumulated and add to the new week. - Not realised yet!
+; Guards not defeated would be accumulated and addded to the new week.
 
 ; Note: Despite the random number of entrance and exit may be different with each week of generation, with every hero visits, the data of guards will be synchronized with two connecting gates. That means defeating and taming the guards of the entrance will also clear the guards of the exit.
 
-; TO-DO:
-; Fix Guards not defeated would be accumulated and add to the new week. (is this necessary?)
-
 
 ; ============= CONSTANTS ==============
-!#DC(MON_SCAVENGER_SPIDER)    = 3;
-!#DC(MON_UNDERGROUND_DEVOURER) = 5;
-!#DC(MON_SCAVENGER_WASP)      = 7;
+!#DC(MON_SCAVENGER_SPIDER)     = 124;
+!#DC(MON_SCAVENGER_WASP)       = 126;
+!#DC(MON_UNDERGROUND_DEVOURER) = 128;
 ; =========== END CONSTANTS ============
 
 ; ============== SETTINGS ==============
@@ -193,18 +190,17 @@ ZVSE2
   !!if&(exp)<>i^ue_ua_heroExp^;
     ; if the hero win, remove guards for both entrance and exit of the Subterranean Gate
     !!FU(ue_ua_RemoveUDGuards):P;
-  *!el;
+  !!el;
     ; if the hero lose, calculate remaining guards and set
-    *!VR(leftGuards:y):S0;
+    !!VR(leftGuards:y):S0;
 
-    *!re i/(BATTLE_DEFENDER_STACK_FIRST)/(BATTLE_DEFENDER_STACK_LAST);
-      *!BMi:T?(mon:y) N1/?(qty:y);
-            *!IF:M^%(mon) %(qty)^;
-      *!VR(leftGuards)&(mon)=(MON_UNDERGROUND_DEVOURER)/(qty)>0:+(qty);
-    *!en;
+    !!re i/(BATTLE_DEFENDER_STACK_FIRST)/(BATTLE_DEFENDER_STACK_LAST);
+      !!BMi:T?(mon:y) N?(qty:y);
+      !!VR(leftGuards)&(mon)=(MON_UNDERGROUND_DEVOURER)/(qty)>0:+(qty);
+    !!en;
 
-    *!PO998:B0/(leftGuards);
-    *!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:B0/(leftGuards);
+    !!PO998:B0/(leftGuards);
+    !!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:B0/(leftGuards);
   !!en;
 
   ; Restore the global var if battle is ended
