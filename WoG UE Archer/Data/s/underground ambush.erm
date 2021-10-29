@@ -32,7 +32,6 @@ ZVSE2
 !#VRi^ue_ua_guardMaxRandom^:S20;        [max random UD added in the the ambush]
 !#VRi^ue_ua_safePassStatic^:S5;         [static amount of safe passes each week, reduce by 1 everytime pass through a gate]
 !#VRi^ue_ua_safePassMaxRandom^:S2;      [max random safe passes]
-!#VRi^ue_ua_extraGuardsPerPass^:S2;     [increase the guard by this number with each hero passing through a gate]
 !#VRi^ue_ua_minTriggerLevel^:S1;        [min level of the hero that triggers sub gate guards]
 !#VRi^ue_ua_SpeedAsGuards^:S10;         [new speed of UD as guards of sub gates]
 ; ============ END SETTINGS ============
@@ -41,7 +40,8 @@ ZVSE2
 !?FU(ue_ua_RestrainValues);
 !!VRi^ue_ua_guardStatic^:F0/(INT_MAX);
 !!VRi^ue_ua_guardMaxRandom^:F0/(INT_MAX);
-!!VRi^ue_ua_extraGuardsPerPass^:F0/(INT_MAX);
+!!VRi^ue_ua_safePassStatic^:F0/(INT_MAX);
+!!VRi^ue_ua_safePassMaxRandom^:F0/(INT_MAX);
 !!VRi^ue_ua_minTriggerLevel^:F1/(INT_MAX);
 !!VRi^ue_ua_SpeedAsGuards^:F1/(INT_MAX);
 
