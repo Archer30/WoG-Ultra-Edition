@@ -10,7 +10,7 @@ ZVSE2
 ; With every week, a random number of Underground Devourer and a random amount of safe passes will be generated at every subterranean gate. When a hero pass through a gate, 1 safe pass will be taken unless one of these conditions is meet:
 
 ; Nothing would happen - if The gate has no guards/The visiting hero has UD in the army/The visiting hero has low hero level
-; The guards would be tamed and ask to add to the hero's army, and removed from the gate - if the hero has either Scavenger Spider or Scavenger Wasp in the army
+; The guards would be tamed and added to the hero's army, also removed from the gate - if the hero has either Scavenger Spider or Scavenger Wasp in the army
 
 ; If the safe pass hits 0, then a battle would be initiated between the hero and the UD guards. In this battle, UD guards will be set to a high speed. This would lead to two possibilities:
 ; The hero defeated the guards - then the guards from the gate would be cleared.
