@@ -1,0 +1,225 @@
+ZVSE2
+; Author:   Archer30
+; Special thanks to Hawaiing
+; Engine:   ERM 2.0+
+; Requires: ERA 3.3+, Era Erm Framework
+
+; Underground Devourers ambush at subterranean gates
+
+
+; With every week, a random number of Underground Devourer and a random amount of safe passes will be generated at every subterranean gate. When a hero pass through a gate, 1 safe pass will be taken unless one of these conditions is meet:
+
+; Nothing would happen - if The gate has no guards/The visiting hero has UD in the army/The visiting hero has low hero level
+; The guards would be tamed and ask to add to the hero's army, and removed from the gate - if the hero has either Scavenger Spider or Scavenger Wasp in the army
+
+; If the safe pass hits 0, then a battle would be initiated between the hero and the UD guards. In this battle, UD guards will be set to a high speed. This would lead to two possibilities:
+; The hero defeated the guards - then the guards from the gate would be cleared.
+; The hero failed to defeat the guards - then the guards of the gate would be reduced by the amount that were killed in the battle.
+
+; Guards not defeated would be accumulated and add to the new week. - Not realised yet!
+
+; Note: Despite the random number of entrance and exit may be different with each week of generation, with every hero visits, the data of guards will be synchronized with two connecting gates. That means defeating and taming the guards of the entrance will also clear the guards of the exit.
+
+; TO-DO:
+; Fix Guards not defeated would be accumulated and add to the new week. (is this necessary?)
+
+
+; ============= CONSTANTS ==============
+!#DC(MON_SCAVENGER_SPIDER)    = 3;
+!#DC(MON_UNDERGROUND_DEVOURER) = 5;
+!#DC(MON_SCAVENGER_WASP)      = 7;
+; =========== END CONSTANTS ============
+
+; ============== SETTINGS ==============
+!#VRi^ue_ua_guardStatic^:S15;           [static amount of UD ambushed in subterranean gate]
+!#VRi^ue_ua_guardMaxRandom^:S20;        [max random UD added in the the ambush]
+!#VRi^ue_ua_safePassStatic^:S5;         [static amount of safe passes each week, reduce by 1 everytime pass through a gate]
+!#VRi^ue_ua_safePassMaxRandom^:S2;      [max random safe passes]
+!#VRi^ue_ua_extraGuardsPerPass^:S2;     [increase the guard by this number with each hero passing through a gate]
+!#VRi^ue_ua_minTriggerLevel^:S1;        [min level of the hero that triggers sub gate guards]
+!#VRi^ue_ua_SpeedAsGuards^:S10;         [new speed of UD as guards of sub gates]
+; ============ END SETTINGS ============
+
+
+!?FU(ue_ua_RestrainValues);
+!!VRi^ue_ua_guardStatic^:F0/(INT_MAX);
+!!VRi^ue_ua_guardMaxRandom^:F0/(INT_MAX);
+!!VRi^ue_ua_extraGuardsPerPass^:F0/(INT_MAX);
+!!VRi^ue_ua_minTriggerLevel^:F1/(INT_MAX);
+!!VRi^ue_ua_SpeedAsGuards^:F1/(INT_MAX);
+
+!#FU(ue_ua_RestrainValues):P;
+
+** Set up all subterranean gates on Monday
+!?FU(OnEveryDay)&i^timerOnce^/i^timerWeekday^=1;
+!!UN:U(OBJ_SUBTERRANEAN_GATE)/(ANY_OBJ)/?(qty:y);
+!!VRv2:S-1;
+
+!!re (gateIndex:y)/0/(qty)/1/-1;
+  !!UN:U(OBJ_SUBTERRANEAN_GATE)/(ANY_OBJ)/-1/2;
+  ; Enable guards and get remaining guards of the gate
+  !!PO2:N(TRUE) B0/?(guardQty:y);
+  ; Ad in new guards (accumulate guards that are not defeated)
+  !!VR(randGuard:y):T0/0/i^ue_ua_guardMaxRandom^;
+  !!VR(guardQtyNew:y):S(guardQty) +i^ue_ua_guardStatic^ +(randGuard);
+  !!PO2:B0/(guardQtyNew);
+  ; Set safe passes for the gate
+  !!VR(safePass:y):Si^ue_ua_safePassStatic^ Ti^ue_ua_safePassMaxRandom^;
+  !!PO2:B1/(safePass);
+!!en;
+
+** Visit for subterranean gates
+!?OB(OBJ_SUBTERRANEAN_GATE);
+; Check the guards of the sub gate
+!!PO998:N?(isGuarded:y) B0/?(guardQty:y) B1/?(safePass:y);
+; Synchronize the date of entrance and exit
+!!FU(GetSubterraneanGateExit):Pv998/v999/v1000/?i^subGate_hasExit^/?i^subGateExit_x^/?i^subGateExit_y^/?i^subGateExit_z^;
+!!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:N(isGuarded) B0/(guardQty) B1/(safePass);
+
+!!if&(isGuarded)/(guardQty)>0;
+  !!VR(spiderQty:y):S0;
+  !!VR(waspQty:y):S0;
+  !!VR(devourerQty:y):S0;
+  !!HE(CURRENT_HERO):E?(exp:y)/?(lv:y);
+
+  ; Check if the hero has any of UD, Spider and Wasp
+  !!re i/(ARMY_SLOT_FIRST)/(ARMY_SLOT_LAST);
+    !!HE(CURRENT_HERO):C0/i/?(mon:y)/?(qty:y);
+
+    !!VR(spiderQty)&(mon)=(MON_SCAVENGER_SPIDER):+(qty);
+    !!VR(waspQty)&(mon)=(MON_SCAVENGER_WASP):+(qty);
+    !!VR(devourerQty)&(mon)=(MON_UNDERGROUND_DEVOURER):+(qty);
+  !!en;
+
+  ; Tamed UD quantity = Spiders + Wasps in the hero's army
+  !!VR(tamedQty:y):S(spiderQty) +(waspQty);
+
+  !!if&(tamedQty)=0/(devourerQty)=0/(lv)>=i^ue_ua_minTriggerLevel^;
+    !!FU(ue_ua_DecreaseSafePass):P(safePass);
+
+    ; Initiate a fight if the hero has no Spider, Wasp nor UD, plus level is high, increase the speed of UD to make the battle more scary
+    !!if&(safePass)<=0;
+      !!VRi^ue_ua_isFightingGuards^:S(TRUE);
+      ; Set up bonus speed for the guardds
+      !!MA:S(MON_UNDERGROUND_DEVOURER)/?i^ue_ua_originalUDSpeed^;
+      !!MA:S(MON_UNDERGROUND_DEVOURER)/i^ue_ua_SpeedAsGuards^;[WIP: Should this be set as a bonus instead of a static value?]
+      ; Manage battlereplay compatibility - would be used only when i^ue_ua_isFightingGuards_rep^ is TRUE
+      !!VRi^ue_ua_guardQty^:S(guardQty);
+
+      !!if&1000;
+        !!SN:T^ue.ua.devourer^/?(devourerStr:z);
+        !!IF:Q1/(PIC_TYPE_MONSTER)/(MON_UNDERGROUND_DEVOURER)/1^%(devourerStr)^;
+      !!en;
+
+      !!HE(CURRENT_HERO):Tv998/v999/v1000/(MON_UNDERGROUND_DEVOURER)/(guardQty);
+    !!en;
+  !!el&(tamedQty)>0;
+    ; Tame the UD if the hero has either Spider or Wasp
+    !!if&1000;
+      !!if&(spiderQty)>0/(waspQty)>0;
+        !!SN:T^ue.ua.spiderAndWasp^/?(spiderAndWaspStr:z);
+        !!IF:Q1/(PIC_TYPE_MONSTER)/(MON_SCAVENGER_SPIDER)/(PIC_TYPE_MONSTER)/(MON_SCAVENGER_WASP)/(PIC_TYPE_MONSTER)/(MON_UNDERGROUND_DEVOURER)/1^%(spiderAndWaspStr)^;        
+      !!el&(spiderQty)>0/(waspQty)=0;
+        !!SN:T^ue.ua.spider^/?(spiderStr:z);
+        !!IF:Q1/(PIC_TYPE_MONSTER)/(MON_SCAVENGER_SPIDER)/(PIC_TYPE_MONSTER)/(MON_UNDERGROUND_DEVOURER)/1^%(spiderStr)^;
+      !!el&(spiderQty)=0/(waspQty)>0;
+        !!SN:T^ue.ua.wasp^/?(waspStr:z);
+        !!IF:Q1/(PIC_TYPE_MONSTER)/(MON_SCAVENGER_WASP)/(PIC_TYPE_MONSTER)/(MON_UNDERGROUND_DEVOURER)/1^%(waspStr)^;
+      !!en;
+
+      ; Give the hero guards of the sub gate
+      !!HE(CURRENT_HERO):C2/(MON_UNDERGROUND_DEVOURER)/(tamedQty)/(TRUE);
+    !!el;
+      !!HE(CURRENT_HERO):C2/(MON_UNDERGROUND_DEVOURER)/(tamedQty)/(FALSE); [AI - give UD and auto manage if army slots are all occupied]
+    !!en;
+
+    ; Remove guards
+    !!FU(ue_ua_RemoveUDGuards):P;
+  !!en;
+!!en;
+
+!?FU(GetSubterraneanGateExit);          [Hawaiing]
+; Check if the subterranean gate has an exit, return the coordinate if positive
+; x1 - x3 = coordinates of the entrance
+; x4 = Check if there is exit to the subterranean gate
+; x5 - x7 = return coordinates if x4 = TRUE
+!!VRx4:C0/-1/-1/-1;
+!!OBx1/x2/x3:T?y1;
+!!TRx1/x2/x3:E?y3;
+!!FU|y1<>(OBJ_SUBTERRANEAN_GATE)/y3:E;
+
+!!UN:C6919480/4/?y4;
+!!SN:E7410185/1/x1/x2/x3;
+!!VRy10:Sv1;
+!!SN:E5036800/2/y4/10784204/y10;[y20]
+!!VRy30:Sy20 &1023;
+!!VRx4:S1;
+!!VRx4&y30=255:S0;
+
+!!if&x4;
+  !!SN:E7413577/1/10784284/10784288/10784292/y20;
+  !!VRx5:Cy40/y41/y42;
+!!en;
+
+!?FU(ue_ua_DecreaseSafePass);
+!#VA(safePass:x);
+
+; Decrease 1 for safe pass if greater than 0
+!!if&(safePass)>=0;
+  !!VR(safePassNew:y):S(safePass) -1;
+  !!PO998:B1/(safePassNew);
+  ; Synchronize the data of entrance and exit
+  !!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:B1/(safePassNew);
+!!en;
+
+!?FU(ue_ua_RemoveUDGuards);
+; Remove guards for the current gate and the exit
+!!PO998:N(FALSE) B0/0;
+!!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:N(FALSE) B0/0;
+
+** Manage Global Var befoer battle start
+!?FU(OnBeforeBattleUniversal);
+!!VRi^ue_ua_isFightingGuards_rep^:Si^ue_ua_isFightingGuards^; [for battle replay]
+!!HEi^battle_hero_0^&i^ue_ua_isFightingGuards^:E?i^ue_ua_heroExp^; [for checking whether the visiting hero wins the battle]
+
+** Manage the end of subterranean gates battle
+!?FU(OnAfterBattleAction)&i^ue_ua_isFightingGuards^;
+!!BU:C?(battleIsEnded:y);
+
+!!if&(battleIsEnded);
+  !!MA:S(MON_UNDERGROUND_DEVOURER)/i^ue_ua_originalUDSpeed^;
+  !!HEi^battle_hero_0^:E?(exp:y);
+
+  !!if&(exp)<>i^ue_ua_heroExp^;
+    ; if the hero win, remove guards for both entrance and exit of the Subterranean Gate
+    !!FU(ue_ua_RemoveUDGuards):P;
+  *!el;
+    ; if the hero lose, calculate remaining guards and set
+    *!VR(leftGuards:y):S0;
+
+    *!re i/(BATTLE_DEFENDER_STACK_FIRST)/(BATTLE_DEFENDER_STACK_LAST);
+      *!BMi:T?(mon:y) N1/?(qty:y);
+            *!IF:M^%(mon) %(qty)^;
+      *!VR(leftGuards)&(mon)=(MON_UNDERGROUND_DEVOURER)/(qty)>0:+(qty);
+    *!en;
+
+    *!PO998:B0/(leftGuards);
+    *!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:B0/(leftGuards);
+  !!en;
+
+  ; Restore the global var if battle is ended
+  !!VRi^ue_ua_isFightingGuards^:S(FALSE);
+!!en;
+
+** Restore the variable when loading a save game
+!?FU(OnAfterLoadGame);
+!!VRi^ue_ua_isFightingGuards^:S(FALSE);
+
+** Restore the variable when replaying the battle
+!?FU(OnBattleReplay);
+!!VRi^ue_ua_isFightingGuards^:Si^ue_ua_isFightingGuards_rep^;
+
+!!if&i^ue_ua_isFightingGuards^;
+  !!PO998:N(TRUE) B0/i^ue_ua_guardQty^;
+  !!POi^subGateExit_x^/i^subGateExit_y^/i^subGateExit_z^&i^subGate_hasExit^:N(TRUE) B0/i^ue_ua_guardQty^;
+!!en;
