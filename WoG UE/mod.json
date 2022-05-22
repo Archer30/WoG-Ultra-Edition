@@ -9,8 +9,8 @@
 			"ru_RU": "readme.txt"
 		},
 		"short": {
-			"en_US": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Version: v2.5.3 ********************\r\n               \r\n\r\nNew global mod which adds a lot of content to the game. ",
-			"ru_RU": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Версия: v2.5.3 ********************\r\n                \r\n\r\nНовый глобальный мод, вносящий в игру множество интересных изменений. "
+			"en_US": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Version: v2.6.1 ********************\r\n               \r\n\r\nNew global mod which adds a lot of content to the game. ",
+			"ru_RU": "\r\n\r\n                 ************** WoG Ultra Edition **************\r\n                 ****************** Версия: v2.6.1 ********************\r\n                \r\n\r\nНовый глобальный мод, вносящий в игру множество интересных изменений. "
 		}
 	},
 	"author": "Raistlin",
@@ -19,7 +19,7 @@
 		"file": "UE.ico",
 		"index": 0
 	},
-	"mod_version": "v2.5.3",
+	"mod_version": "v2.6.1",
 	"priority": 2,
 	"compatibility": {
 		"class": "default",

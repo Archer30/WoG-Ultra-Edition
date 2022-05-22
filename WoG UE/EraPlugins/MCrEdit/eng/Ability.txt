@@ -50,8 +50,8 @@ Fireball attack.
 
 
 Summon demons from a dead ally.
-Immune to fire. Hates Genies.
-Fire shield. Immune to fire. Hates Genies.
+No melee penalty. Immune to fire. Hates Genies.
+No melee penalty. Fire shield. Immune to fire. Hates Genies.
 -1 enemy luck. No enemy retaliation. Hates Angels.
 -1 enemy luck. No enemy retaliation. Hates Angels.
 Undead.
@@ -137,7 +137,7 @@ Spits acid.
 Group spell casters.
 No Range or Barrier penalties.
 Positive luck.
-Summons more allied Peasants during the battle.
+Summons allied Peasants during the battle.
 
 Curse.
 Sandwalkers.
@@ -168,8 +168,8 @@ Protected from air spells. No fear.
 Protected from water spells. No fear.
 Attacks all adjacent enemies. No fear. No Enemy retaliation.
 Protected by Magic Mirror. No fear. No melee penalty. Casts mass Bless on allies.
-No walls or range penalty. No fear. Air shield.
-No walls or range penalty. No fear. Fire shield.
+No walls or range penalty. No fear. Air shield. Ice immunity
+No walls or range penalty. No fear. Fire shield. Fire immunity
 This creature is no longer in the game. If you see this text something went wrong.
 Summons guards.
 
@@ -192,11 +192,11 @@ Summons guards.
 
 Shoots twice. Merry.
 This creature is no longer in the game. If you see this text something went wrong.
-Lycanthropy (x2 if full moon). 
+Undead. Vulnerable to physical fire. Fear and Regeneration ability.
 This creature is no longer in the game. If you see this text something went wrong.
 Undead. -1 to enemy morale. 20% Magic Resist. 20% Block. Age attack.
 This creature is no longer in the game. If you see this text something went wrong.
-Attack twice. Range retaliation.
+Attack twice. 
 Unlimited retaliations. Fearless.
 Attack Twice. Retaliates twice.
 Jousting bonus. Hates all nonliving Cavaliers.
@@ -216,7 +216,7 @@ Fireball attack. Fire shield. Inmune to fire spells.
 Fire shield. Attacks all adjacent enemies. No enemy retaliation.
 Attacks with fire wall. Immune to Fire Magic and Mind spells.
 This creature is no longer in the game. If you see this text something went wrong.
-No enemy retaliation. Fire shield. Immune to fire. Hates Genies. 
+No melee penalty. No enemy retaliation. Fire shield. Immune to fire. Hates Genies. 
 This creature is no longer in the game. If you see this text something went wrong.
 This creature is no longer in the game. If you see this text something went wrong.
 Undead. Drains life. No enemy retaliation. 
@@ -224,8 +224,8 @@ This creature is no longer in the game. If you see this text something went wron
 Undead. Curses enemies. Death blow attack. Hates all living Cavaliers.
 Undead. Protected from earth spells. Disease. Slows down enemies.
 Immune to Blinding. Torment weak enemies. Fearless.
-Protected from fire spells. No enemy retaliation. Casts Forgetfulness. 
-This creature is no longer in the game. If you see this text something went wrong.
+Protected from fire spells. No enemy retaliation. No melee penalty. Casts Forgetfulness. 
+No Range or Barrier penalties. No melee penalty. Mind spell immunity.
 This creature is no longer in the game. If you see this text something went wrong.
 Good morale. Reduces damage. 
 Good morale. Reduces damage. Curses all enemies. 
@@ -237,7 +237,7 @@ Casts mass Bloodlust on allies. No Range or Barrier penalties. Close Range shoot
 Chain Lightning strike.
 Chain Lightning strike. Casts mass Protection from Air on allies.
 Attacks siege walls. Causes more destruction.
-This creature is no longer in the game. If you see this text something went wrong.
+Turns enemies into Gnoll Lycanthropes.
 This creature is no longer in the game. If you see this text something went wrong.
 Destroys armor. 
 Protected from water spells. Destroys armor. Fearless.
@@ -250,7 +250,7 @@ Hostile Water magic immunity. Fire vulnerability. Casts Sorrow.
 Mind & fire immunity. Cold vulnerability. Protection from Fire. Spellcaster: Fire shield.
 Hostile Water magic immunity. Fire vulnerability. Casts Sorrow. Strike and return.
 Attacks all adjacent enemies w/o retaliation. Spell immunity. Summons Clones.
-
+All Pfoenix abilities. The hero can summon Energy Elementals instead of Fire Elementals.
 Strike and return.
 This creature is no longer in the game. If you see this text something went wrong.
 Strike and return. Magic damper (spell cost +1).

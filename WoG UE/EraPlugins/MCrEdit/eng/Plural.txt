@@ -202,20 +202,20 @@ Paladins
 Holy Champions
 Seraphs
 Leprechauns
-Satyr Elfs
+Satyr Elves
 Forest Guards
 Legendary Unicorns
-Faun Elfs
+Faun Elves
 Chimeras
 Steel Golems
 Warrior Genies
-Naga Empresses
-Guardians of Zeus
+Spiked Cobras
+Fire Cobras
 Succubi
 Nightmares
 Creatures from Hell
 Hell Steeds
-Pit Masters
+Will-o-Wisp
 Efreet Rajahs
 Witches
 Rogue Leaders
@@ -223,23 +223,23 @@ Ghouls
 Ancient Liches
 Reapers
 Mechanized Zombies
-Troglodyte Torturers
+Torturer Troglodytes
 Deadly Eyes
-Harpy Sanguinaries
+Adepts
 Medusa Empresses
 Legendary Minotaurs
 Damned Minotaurs
 Abyssal Dragons
-Hobgoblin Overlords
-Wolf Rider Killers
+Swamp Cobras
+Water Cobras
 Gladiator Orcs
 Ogre Leaders
 Lightningbirds
 Thunder Dragons
 Cyclop Demolishers
-Centagnolls
+Gnoll Lycanthropes
 Elite Lizards
-Lizard Guardsmans
+Lizard Guardsmen
 Lizard Captains
 Acid Wyvern
 Acid Gorgons
@@ -250,11 +250,11 @@ Sea Nymphs
 Plasma Elementals
 Spirits of the Ocean
 Astral Elementals
-Divine Phoenixes
+Electro Phoenixes
 Forest Dragons
 Necross Dragons
 Swamp Dragons
-Faun Elfs
+Faun Elves
 
 
 

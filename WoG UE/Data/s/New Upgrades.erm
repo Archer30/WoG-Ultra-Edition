@@ -1,919 +1,1121 @@
-ZVSE
+ZVSE2
+
+
+
+*    Список таблиц:
+
+* 1) Уровни существ, которые улучшаются в городах
+* 2) Список навыков для улучшения (навыки городов, пока не используется)
+* 3) Навыки, требуемые для отдельных существ
+* 4) Количество скиллов, требуемых для улучшения
+* 5) Существа, улучшаемые в городах
+* 6) Существа, получаемые при улучшении
+* 7) Существа, потенциально блокируемые в городах
+* 8) Номера апгрейдов для жилищ
+* 9) Имена существ и их улучшений для диалога улучшения
+
+
+********************************************************************************
+
+
+; Уровни существ, которые улучшаются в городах
+; LTU Levels To Upgrade
+!#SN:W^UE.LTU1InTown0^/1;
+!#SN:W^UE.LTU2InTown0^/3;
+!#SN:W^UE.LTU3InTown0^/4;
+!#SN:W^UE.LTU4InTown0^/5;
+!#SN:W^UE.LTU5InTown0^/6;
+!#SN:W^UE.LTU6InTown0^/-1;
+
+!#SN:W^UE.LTU1InTown1^/0;
+!#SN:W^UE.LTU2InTown1^/1;
+!#SN:W^UE.LTU2InTown1Extra^/19;
+!#SN:W^UE.LTU3InTown1^/2;
+!#SN:W^UE.LTU4InTown1^/2;
+!#SN:W^UE.LTU5InTown1^/4;
+!#SN:W^UE.LTU5InTown1Extra^/25;
+!#SN:W^UE.LTU6InTown1^/6;
+
+!#SN:W^UE.LTU1InTown2^/0;
+!#SN:W^UE.LTU2InTown2^/1;
+!#SN:W^UE.LTU2InTown2Extra^/19;
+!#SN:W^UE.LTU3InTown2^/2;
+!#SN:W^UE.LTU4InTown2^/2;
+!#SN:W^UE.LTU5InTown2^/4;
+!#SN:W^UE.LTU6InTown2^/6;
+
+!#SN:W^UE.LTU1InTown3^/0;
+!#SN:W^UE.LTU1InTown3Extra^/19;
+!#SN:W^UE.LTU2InTown3^/2;
+!#SN:W^UE.LTU2InTown3Extra^/25;
+!#SN:W^UE.LTU3InTown3^/3;
+!#SN:W^UE.LTU4InTown3^/3;
+!#SN:W^UE.LTU5InTown3^/5;
+!#SN:W^UE.LTU6InTown3^/6;
+
+!#SN:W^UE.LTU1InTown4^/1;
+!#SN:W^UE.LTU2InTown4^/2;
+!#SN:W^UE.LTU3InTown4^/3;
+!#SN:W^UE.LTU4InTown4^/5;
+!#SN:W^UE.LTU5InTown4^/6;
+!#SN:W^UE.LTU6InTown4^/-1;
+
+!#SN:W^UE.LTU1InTown5^/0;
+!#SN:W^UE.LTU1InTown5Extra^/19;
+!#SN:W^UE.LTU2InTown5^/2;
+!#SN:W^UE.LTU3InTown5^/4;
+!#SN:W^UE.LTU4InTown5^/4;
+!#SN:W^UE.LTU5InTown5^/6;
+!#SN:W^UE.LTU6InTown5^/-1;
+
+!#SN:W^UE.LTU1InTown6^/2;
+!#SN:W^UE.LTU2InTown6^/3;
+!#SN:W^UE.LTU3InTown6^/4;
+!#SN:W^UE.LTU4InTown6^/4;
+!#SN:W^UE.LTU5InTown6^/5;
+!#SN:W^UE.LTU6InTown6^/6;
+
+!#SN:W^UE.LTU1InTown7^/0;
+!#SN:W^UE.LTU1InTown7Extra^/19;
+!#SN:W^UE.LTU2InTown7^/1;
+!#SN:W^UE.LTU3InTown7^/1;
+!#SN:W^UE.LTU4InTown7^/4;
+!#SN:W^UE.LTU5InTown7^/5;
+!#SN:W^UE.LTU6InTown7^/6;
+
+!#SN:W^UE.LTU1InTown8^/0;
+!#SN:W^UE.LTU1InTown8Extra^/19;
+!#SN:W^UE.LTU2InTown8^/2;
+!#SN:W^UE.LTU3InTown8^/2;
+!#SN:W^UE.LTU4InTown8^/3;
+!#SN:W^UE.LTU5InTown8^/5;
+!#SN:W^UE.LTU6InTown8^/6;
+
+********************************************************************************
+
+; Список навыков для улучшения (навыки городов)
+!#SN:W^UE.Skill1InTown0^/6;  Лидерство
+!#SN:W^UE.Skill2InTown0^/22; Атака
+!#SN:W^UE.Skill3InTown0^/7;  Мудрость
+!#SN:W^UE.Skill4InTown0^/2;  Логистика
+!#SN:W^UE.Skill5InTown0^/13; Поместья
+!#SN:W^UE.Skill6InTown0^/27; Первая помощь
+!#SN:W^UE.Skill7InTown0^/-1;
+!#SN:W^UE.Skill8InTown0^/-1;
+
+!#SN:W^UE.Skill1InTown1^/1;  Стрельба
+!#SN:W^UE.Skill2InTown1^/9;  Удача
+!#SN:W^UE.Skill3InTown1^/0;  Поиск пути
+!#SN:W^UE.Skill4InTown1^/3;  Разведка
+!#SN:W^UE.Skill5InTown1^/11; Орлиный глаз
+!#SN:W^UE.Skill6InTown1^/26; Сопротивление
+!#SN:W^UE.Skill7InTown1^/-1;
+!#SN:W^UE.Skill8InTown1^/-1;
+
+!#SN:W^UE.Skill1InTown2^/8;  Мистицизм
+!#SN:W^UE.Skill2InTown2^/15; Магия воздуха
+!#SN:W^UE.Skill3InTown2^/18; Грамотность
+!#SN:W^UE.Skill4InTown2^/24; Интеллект
+!#SN:W^UE.Skill5InTown2^/4;  Дипломатия
+!#SN:W^UE.Skill6InTown2^/17; Магия земли
+!#SN:W^UE.Skill7InTown2^/-1;
+!#SN:W^UE.Skill8InTown2^/-1;
+
+!#SN:W^UE.Skill1InTown3^/22; Атака
+!#SN:W^UE.Skill2InTown3^/14; Магия огня
+!#SN:W^UE.Skill3InTown3^/19; Тактика
+!#SN:W^UE.Skill4InTown3^/7;  Мудрость
+!#SN:W^UE.Skill5InTown3^/8;  Мистицизм
+!#SN:W^UE.Skill6InTown3^/13; Поместья
+!#SN:W^UE.Skill7InTown3^/-1;
+!#SN:W^UE.Skill8InTown3^/-1;
+
+!#SN:W^UE.Skill1InTown4^/12; Некромантия
+!#SN:W^UE.Skill2InTown4^/8;  Мистицизм
+!#SN:W^UE.Skill3InTown4^/17; Магия земли
+!#SN:W^UE.Skill4InTown4^/23; Защита
+!#SN:W^UE.Skill5InTown4^/22; Атака
+!#SN:W^UE.Skill6InTown4^/25; Волшебство
+!#SN:W^UE.Skill7InTown4^/-1;
+!#SN:W^UE.Skill8InTown4^/-1;
+
+!#SN:W^UE.Skill1InTown5^/21; Обучение
+!#SN:W^UE.Skill2InTown5^/25; Волшебство
+!#SN:W^UE.Skill3InTown5^/10; Баллистика
+!#SN:W^UE.Skill4InTown5^/17; Магия земли
+!#SN:W^UE.Skill5InTown5^/14; Магия огня
+!#SN:W^UE.Skill6InTown5^/0;  Поиск пути
+!#SN:W^UE.Skill7InTown5^/-1;
+!#SN:W^UE.Skill8InTown5^/-1;
+
+!#SN:W^UE.Skill1InTown6^/10; Баллистика
+!#SN:W^UE.Skill2InTown6^/26; Сопротивление
+!#SN:W^UE.Skill3InTown6^/1;  Стрельба
+!#SN:W^UE.Skill4InTown6^/15; Магия воздуха
+!#SN:W^UE.Skill5InTown6^/20; Артиллерия
+!#SN:W^UE.Skill6InTown6^/22; Атака
+!#SN:W^UE.Skill7InTown6^/-1;
+!#SN:W^UE.Skill8InTown6^/-1;
+
+!#SN:W^UE.Skill1InTown7^/23; Защита
+!#SN:W^UE.Skill2InTown7^/19; Тактика
+!#SN:W^UE.Skill3InTown7^/5;  Навигация
+!#SN:W^UE.Skill4InTown7^/16; Магия воды
+!#SN:W^UE.Skill5InTown7^/9;  Удача
+!#SN:W^UE.Skill6InTown7^/2;  Логистика
+!#SN:W^UE.Skill7InTown7^/-1;
+!#SN:W^UE.Skill8InTown7^/-1;
+
+!#SN:W^UE.Skill1InTown8^/25; Волшебство
+!#SN:W^UE.Skill2InTown8^/16; Магия воды
+!#SN:W^UE.Skill3InTown8^/15; Магия воздуха
+!#SN:W^UE.Skill4InTown8^/14; Магия огня
+!#SN:W^UE.Skill5InTown8^/17; Магия земли
+!#SN:W^UE.Skill6InTown8^/27; Первая помощь
+!#SN:W^UE.Skill7InTown8^/-1;
+!#SN:W^UE.Skill8InTown8^/-1;
+
+********************************************************************************
+
+; Навыки, требуемые для отдельных существ
+
+*** Навыки Замка ***
+
+!#SN:W^UE.Cr1S1InTown0^/6;  Лидерство
+
+!#SN:W^UE.Cr2S1InTown0^/6;  Лидерство
+!#SN:W^UE.Cr2S2InTown0^/22; Нападение
+
+!#SN:W^UE.Cr3S1InTown0^/6;  Лидерство
+!#SN:W^UE.Cr3S2InTown0^/22; Нападение
+!#SN:W^UE.Cr3S3InTown0^/7;  Мудрость
+
+!#SN:W^UE.Cr4S1InTown0^/6;  Лидерство
+!#SN:W^UE.Cr4S2InTown0^/22; Нападение
+!#SN:W^UE.Cr4S3InTown0^/7;  Мудрость
+!#SN:W^UE.Cr4S4InTown0^/2;  Логистика
+
+!#SN:W^UE.Cr5S1InTown0^/6;  Лидерство
+!#SN:W^UE.Cr5S2InTown0^/22; Нападение
+!#SN:W^UE.Cr5S3InTown0^/7;  Мудрость
+!#SN:W^UE.Cr5S4InTown0^/2;  Логистика
+!#SN:W^UE.Cr5S5InTown0^/13; Поместья
+!#SN:W^UE.Cr5S6InTown0^/27; Первая помощь
+!#SN:W^UE.Cr5S7InTown0^/-1;
+!#SN:W^UE.Cr5S8InTown0^/-1;
+
+
+*** Навыки Оплота ***
+
+!#SN:W^UE.Cr1S1InTown1^/1;  Меткость
+
+!#SN:W^UE.Cr2S1InTown1^/9;  Удача
+
+!#SN:W^UE.Cr3S1InTown1^/1;  Меткость
+!#SN:W^UE.Cr3S2InTown1^/9;  Удача
+
+!#SN:W^UE.Cr4S1InTown1^/1;  Меткость
+!#SN:W^UE.Cr4S2InTown1^/9;  Удача
+!#SN:W^UE.Cr4S3InTown1^/0;  Поиск пути
+
+!#SN:W^UE.Cr5S1InTown1^/9;  Удача
+!#SN:W^UE.Cr5S2InTown1^/0;  Поиск пути
+!#SN:W^UE.Cr5S3InTown1^/26; Сопротивление
+
+!#SN:W^UE.Cr6S1InTown1^/1;  Меткость
+!#SN:W^UE.Cr6S2InTown1^/9;  Удача
+!#SN:W^UE.Cr6S3InTown1^/0;  Поиск пути
+!#SN:W^UE.Cr6S4InTown1^/3;  Разведка
+!#SN:W^UE.Cr6S5InTown1^/11; Орлиный глаз
+!#SN:W^UE.Cr6S6InTown1^/26; Сопротивление
+!#SN:W^UE.Cr6S7InTown1^/-1;
+!#SN:W^UE.Cr6S8InTown1^/-1;
+
+
+*** Навыки Башни ***
+
+!#SN:W^UE.Cr1S1InTown2^/8;  Мистицизм
+
+!#SN:W^UE.Cr2S1InTown2^/15; Магия воздуха
+
+!#SN:W^UE.Cr3S1InTown2^/8;  Мистицизм
+!#SN:W^UE.Cr3S2InTown2^/15; Магия воздуха
+
+!#SN:W^UE.Cr4S1InTown2^/8;  Мистицизм
+!#SN:W^UE.Cr4S2InTown2^/15; Магия воздуха
+!#SN:W^UE.Cr4S3InTown2^/18; Грамотность
+
+!#SN:W^UE.Cr5S1InTown2^/8;  Мистицизм
+!#SN:W^UE.Cr5S2InTown2^/15; Магия воздуха
+!#SN:W^UE.Cr5S3InTown2^/18; Грамотность
+!#SN:W^UE.Cr5S4InTown2^/24; Интеллект
+
+!#SN:W^UE.Cr6S1InTown2^/8;  Мистицизм
+!#SN:W^UE.Cr6S2InTown2^/15; Магия воздуха
+!#SN:W^UE.Cr6S3InTown2^/18; Грамотность
+!#SN:W^UE.Cr6S4InTown2^/24; Интеллект
+!#SN:W^UE.Cr6S5InTown2^/4;  Дипломатия
+!#SN:W^UE.Cr6S6InTown2^/17; Магия земли
+!#SN:W^UE.Cr6S7InTown2^/-1;
+!#SN:W^UE.Cr6S8InTown2^/-1;
+
+
+*** Навыки Инферно ***
+
+!#SN:W^UE.Cr1S1InTown3^/22; Нападение
+
+!#SN:W^UE.Cr2S1InTown3^/14; Магия огня
+!#SN:W^UE.Cr2S2InTown3^/19; Тактика
+
+!#SN:W^UE.Cr3S1InTown3^/14; Магия огня
+!#SN:W^UE.Cr3S2InTown3^/22; Нападение
+
+!#SN:W^UE.Cr4S1InTown3^/14; Магия огня
+!#SN:W^UE.Cr4S2InTown3^/22; Нападение
+!#SN:W^UE.Cr4S3InTown3^/19; Тактика
+
+!#SN:W^UE.Cr5S1InTown3^/14; Магия огня
+!#SN:W^UE.Cr5S2InTown3^/22; Нападение
+!#SN:W^UE.Cr5S3InTown3^/19; Тактика
+!#SN:W^UE.Cr5S4InTown3^/7;  Мудрость
+
+!#SN:W^UE.Cr6S1InTown3^/14; Магия огня
+!#SN:W^UE.Cr6S2InTown3^/22; Нападение
+!#SN:W^UE.Cr6S3InTown3^/19; Тактика
+!#SN:W^UE.Cr6S4InTown3^/7;  Мудрость
+!#SN:W^UE.Cr6S5InTown3^/8;  Мистицизм
+!#SN:W^UE.Cr6S6InTown3^/13; Поместья
+!#SN:W^UE.Cr6S7InTown3^/-1;
+!#SN:W^UE.Cr6S8InTown3^/-1;
+
+
+*** Навыки Некрополиса ***
+
+!#SN:W^UE.Cr1S1InTown4^/17; Магия земли
+
+!#SN:W^UE.Cr2S1InTown4^/12; Некромантия
+!#SN:W^UE.Cr2S2InTown4^/17; Магия земли
+
+!#SN:W^UE.Cr3S1InTown4^/12; Некромантия
+!#SN:W^UE.Cr3S2InTown4^/8;  Мистицизм
+
+!#SN:W^UE.Cr4S1InTown4^/12; Некромантия
+!#SN:W^UE.Cr4S2InTown4^/8;  Мистицизм
+!#SN:W^UE.Cr4S3InTown4^/17; Магия земли
+!#SN:W^UE.Cr4S4InTown4^/23; Защита
+
+!#SN:W^UE.Cr5S1InTown4^/12; Некромантия
+!#SN:W^UE.Cr5S2InTown4^/8;  Мистицизм
+!#SN:W^UE.Cr5S3InTown4^/17; Магия земли
+!#SN:W^UE.Cr5S4InTown4^/23; Защита
+!#SN:W^UE.Cr5S5InTown4^/22; Нападение
+!#SN:W^UE.Cr5S6InTown4^/25; Волшебство
+!#SN:W^UE.Cr5S7InTown4^/-1;
+!#SN:W^UE.Cr5S8InTown4^/-1;
+
+
+*** Навыки Темницы ***
+
+!#SN:W^UE.Cr1S1InTown5^/21; Обучаемость
+
+!#SN:W^UE.Cr2S1InTown5^/21; Обучение
+!#SN:W^UE.Cr2S2InTown5^/25; Волшебство
+
+!#SN:W^UE.Cr3S1InTown5^/21; Обучение
+!#SN:W^UE.Cr3S2InTown5^/25; Волшебство
+!#SN:W^UE.Cr3S3InTown5^/10; Баллистика
+
+!#SN:W^UE.Cr4S1InTown5^/21; Обучение
+!#SN:W^UE.Cr4S2InTown5^/25; Волшебство
+!#SN:W^UE.Cr4S3InTown5^/10; Баллистика
+!#SN:W^UE.Cr4S4InTown5^/17; Магия земли
+
+!#SN:W^UE.Cr5S1InTown5^/21; Обучение
+!#SN:W^UE.Cr5S2InTown5^/25; Волшебство
+!#SN:W^UE.Cr5S3InTown5^/10; Баллистика
+!#SN:W^UE.Cr5S4InTown5^/17; Магия земли
+!#SN:W^UE.Cr5S5InTown5^/14; Магия огня
+!#SN:W^UE.Cr5S6InTown5^/0;  Поиск пути
+!#SN:W^UE.Cr5S7InTown5^/-1;
+!#SN:W^UE.Cr5S8InTown5^/-1;
+
+
+*** Навыки Цитадели ***
+
+!#SN:W^UE.Cr1S1InTown6^/26; Сопротивление
+!#SN:W^UE.Cr1S2InTown6^/10; Баллистика
+
+!#SN:W^UE.Cr2S1InTown6^/26; Сопротивление
+!#SN:W^UE.Cr2S2InTown6^/1;  Меткость
+
+!#SN:W^UE.Cr3S1InTown6^/26; Сопротивление
+!#SN:W^UE.Cr3S2InTown6^/15; Магия воздуха
+!#SN:W^UE.Cr3S3InTown6^/1;  Меткость
+
+!#SN:W^UE.Cr4S1InTown6^/26; Сопротивление
+!#SN:W^UE.Cr4S2InTown6^/15; Магия воздуха
+!#SN:W^UE.Cr4S3InTown6^/1;  Меткость
+!#SN:W^UE.Cr4S4InTown6^/10; Баллистика
+
+!#SN:W^UE.Cr5S1InTown6^/10; Баллистика
+!#SN:W^UE.Cr5S2InTown6^/26; Сопротивление
+!#SN:W^UE.Cr5S3InTown6^/1;  Меткость
+!#SN:W^UE.Cr5S4InTown6^/20; Артиллерия
+
+!#SN:W^UE.Cr6S1InTown6^/10; Баллистика
+!#SN:W^UE.Cr6S2InTown6^/26; Сопротивление
+!#SN:W^UE.Cr6S3InTown6^/1;  Меткость
+!#SN:W^UE.Cr6S4InTown6^/15; Магия воздуха
+!#SN:W^UE.Cr6S5InTown6^/20; Артиллерия
+!#SN:W^UE.Cr6S6InTown6^/22; Нападение
+!#SN:W^UE.Cr6S7InTown6^/-1;
+!#SN:W^UE.Cr6S8InTown6^/-1;
+
+
+*** Навыки Крепости ***
+
+!#SN:W^UE.Cr1S1InTown7^/23; Защита
+
+!#SN:W^UE.Cr2S1InTown7^/19; Тактика
+
+!#SN:W^UE.Cr3S1InTown7^/23; Защита
+!#SN:W^UE.Cr3S2InTown7^/19; Тактика
+
+!#SN:W^UE.Cr4S1InTown7^/23; Защита
+!#SN:W^UE.Cr4S2InTown7^/19; Тактика
+!#SN:W^UE.Cr4S3InTown7^/16; Магия воды
+
+!#SN:W^UE.Cr5S1InTown7^/23; Защита
+!#SN:W^UE.Cr5S2InTown7^/19; Тактика
+!#SN:W^UE.Cr5S3InTown7^/5;  Навигация
+!#SN:W^UE.Cr5S4InTown7^/16; Магия воды
+
+!#SN:W^UE.Cr6S1InTown7^/23; Защита
+!#SN:W^UE.Cr6S2InTown7^/19; Тактика
+!#SN:W^UE.Cr6S3InTown7^/5;  Навигация
+!#SN:W^UE.Cr6S4InTown7^/16; Магия воды
+!#SN:W^UE.Cr6S5InTown7^/9;  Удача
+!#SN:W^UE.Cr6S6InTown7^/2;  Логистика
+!#SN:W^UE.Cr6S7InTown7^/-1;
+!#SN:W^UE.Cr6S8InTown7^/-1;
+
+
+*** Навыки Сопряжения ***
+
+!#SN:W^UE.Cr1S1InTown8^/25; Волшебство
+
+!#SN:W^UE.Cr2S1InTown8^/25; Волшебство
+!#SN:W^UE.Cr2S2InTown8^/16; Магия воды
+
+!#SN:W^UE.Cr3S1InTown8^/25; Волшебство
+!#SN:W^UE.Cr3S2InTown8^/16; Магия воды
+!#SN:W^UE.Cr3S3InTown8^/15; Магия воздуха
+
+!#SN:W^UE.Cr4S1InTown8^/25; Волшебство
+!#SN:W^UE.Cr4S2InTown8^/14; Магия огня
+
+!#SN:W^UE.Cr5S1InTown8^/16; Магия воды
+!#SN:W^UE.Cr5S2InTown8^/15; Магия воздуха
+!#SN:W^UE.Cr5S3InTown8^/14; Магия огня
+!#SN:W^UE.Cr5S4InTown8^/17; Магия земли
+
+!#SN:W^UE.Cr6S1InTown8^/25; Волшебство
+!#SN:W^UE.Cr6S2InTown8^/16; Магия воды
+!#SN:W^UE.Cr6S3InTown8^/15; Магия воздуха
+!#SN:W^UE.Cr6S4InTown8^/14; Магия огня
+!#SN:W^UE.Cr6S5InTown8^/17; Магия земли
+!#SN:W^UE.Cr6S6InTown8^/27; Первая помощь
+!#SN:W^UE.Cr6S7InTown8^/-1;
+!#SN:W^UE.Cr6S8InTown8^/-1;
+
+********************************************************************************
+
+
+; Количество скиллов, требуемых для улучшения
+
+!#SN:W^UE.SkillCount1InTown0^/1; Элитный арбалетчик
+!#SN:W^UE.SkillCount2InTown0^/2; Паладин
+!#SN:W^UE.SkillCount3InTown0^/3; Фанатик войны
+!#SN:W^UE.SkillCount4InTown0^/4; Чемпион войны
+!#SN:W^UE.SkillCount5InTown0^/6; Верховный архангел
+!#SN:W^UE.SkillCount6InTown0^/-1;
+
+!#SN:W^UE.SkillCount1InTown1^/1; Сильванский кентавр
+!#SN:W^UE.SkillCount2InTown1^/1; Гном-Лепрекон
+!#SN:W^UE.SkillCount3InTown1^/2; Эльф-сатир
+!#SN:W^UE.SkillCount4InTown1^/3; Эльф-фавн
+!#SN:W^UE.SkillCount5InTown1^/3; Страж леса
+!#SN:W^UE.SkillCount6InTown1^/6; Алмазный дракон
+
+!#SN:W^UE.SkillCount1InTown2^/1; Санта-гремлин
+!#SN:W^UE.SkillCount2InTown2^/1; Химера
+!#SN:W^UE.SkillCount3InTown2^/2; Золотой Голем
+!#SN:W^UE.SkillCount4InTown2^/3; Алмазный Голем
+!#SN:W^UE.SkillCount5InTown2^/4; Джинн-воин
+!#SN:W^UE.SkillCount6InTown2^/6; Громовержец
+
+!#SN:W^UE.SkillCount1InTown3^/1; Суккуб
+!#SN:W^UE.SkillCount2InTown3^/2; Адская тварь
+!#SN:W^UE.SkillCount3InTown3^/2; Кошмар
+!#SN:W^UE.SkillCount4InTown3^/3; Адский конь
+!#SN:W^UE.SkillCount5InTown3^/4; Ифрит-Раджа
+!#SN:W^UE.SkillCount6InTown3^/6; Барон ада
+
+!#SN:W^UE.SkillCount1InTown4^/1; Механизированный зомби
+!#SN:W^UE.SkillCount2InTown4^/2; Привидение
+!#SN:W^UE.SkillCount3InTown4^/2; Граф Ужаса
+!#SN:W^UE.SkillCount4InTown4^/4; Жнец
+!#SN:W^UE.SkillCount5InTown4^/6; Кровавый дракон
+!#SN:W^UE.SkillCount6InTown4^/-1;
+
+!#SN:W^UE.SkillCount1InTown5^/1; Троглодит-Изверг
+!#SN:W^UE.SkillCount2InTown5^/2; Смертельный глаз
+!#SN:W^UE.SkillCount3InTown5^/3; Легендарный минотавр
+!#SN:W^UE.SkillCount4InTown5^/4; Проклятый минотавр
+!#SN:W^UE.SkillCount5InTown5^/6; Тёмный дракон
+!#SN:W^UE.SkillCount6InTown5^/-1;
+
+!#SN:W^UE.SkillCount1InTown6^/2; Орк-Гладиатор
+!#SN:W^UE.SkillCount2InTown6^/2; Повелитель огров
+!#SN:W^UE.SkillCount3InTown6^/3; Громовой птероящер
+!#SN:W^UE.SkillCount4InTown6^/4; Громовой дракон
+!#SN:W^UE.SkillCount5InTown6^/4; Циклоп-разрушитель
+!#SN:W^UE.SkillCount6InTown6^/6; Чудище-привидение
+
+!#SN:W^UE.SkillCount1InTown7^/1; Оборотень
+!#SN:W^UE.SkillCount2InTown7^/1; Ящер-гвардеец
+!#SN:W^UE.SkillCount3InTown7^/2; Ящер-лейтенант
+!#SN:W^UE.SkillCount4InTown7^/3; Кислотная горгона
+!#SN:W^UE.SkillCount5InTown7^/4; Змей Горыныч
+!#SN:W^UE.SkillCount6InTown7^/6; Кошмарная гидра
+
+!#SN:W^UE.SkillCount1InTown8^/1; Волшебница
+!#SN:W^UE.SkillCount2InTown8^/2; Морская нимфа
+!#SN:W^UE.SkillCount3InTown8^/3; Дух океана
+!#SN:W^UE.SkillCount4InTown8^/2; Плазматический элементаль
+!#SN:W^UE.SkillCount5InTown8^/4; Астральный элементаль
+!#SN:W^UE.SkillCount6InTown8^/6; Дух погребального костра
+
+********************************************************************************
+
+
+; Существа, улучшаемые в городах
+; CTU Creatures To Upgrade
+!#SN:W^UE.CTU1InTown0^/3;  Тяжёлый Арбалетчик
+!#SN:W^UE.CTU2InTown0^/7;  Крестоносец
+!#SN:W^UE.CTU3InTown0^/9;  Фанатик
+!#SN:W^UE.CTU4InTown0^/11; Чемпион
+!#SN:W^UE.CTU5InTown0^/13; Архангел
+!#SN:W^UE.CTU6InTown0^/-1;
+
+!#SN:W^UE.CTU1InTown1^/15; Капитан Кентавров
+!#SN:W^UE.CTU2InTown1^/17; Боевой Гном
+!#SN:W^UE.CTU3InTown1^/19; Благородный Эльф
+!#SN:W^UE.CTU4InTown1^/204;  Эльф-сатир [гипер]
+!#SN:W^UE.CTU5InTown1^/23; Дендроид-Солдат
+!#SN:W^UE.CTU6InTown1^/27; Золотой Дракон
+
+!#SN:W^UE.CTU1InTown2^/29; Мастер-Гремлин
+!#SN:W^UE.CTU2InTown2^/31; Обсидиановая Гаргулья
+!#SN:W^UE.CTU3InTown2^/33; Железный Голем
+!#SN:W^UE.CTU4InTown2^/116;  Золотой Голем [гипер]
+!#SN:W^UE.CTU5InTown2^/37; Мастер-Джинн
+!#SN:W^UE.CTU6InTown2^/41; Титан
+
+!#SN:W^UE.CTU1InTown3^/43; Чёрт
+!#SN:W^UE.CTU2InTown3^/47; Цербер
+!#SN:W^UE.CTU3InTown3^/49; Рогатый Демон
+!#SN:W^UE.CTU4InTown3^/214;  Кошмар [гипер]
+!#SN:W^UE.CTU5InTown3^/53; Ифрит-Султан
+!#SN:W^UE.CTU6InTown3^/55; Архидьявол
+
+!#SN:W^UE.CTU1InTown4^/59; Зомби
+!#SN:W^UE.CTU2InTown4^/61; Призрак
+!#SN:W^UE.CTU3InTown4^/63; Вампир-Лорд
+!#SN:W^UE.CTU4InTown4^/67; Рыцарь Смерти
+!#SN:W^UE.CTU5InTown4^/69; Призрачный Дракон
+!#SN:W^UE.CTU6InTown4^/-1;
+
+!#SN:W^UE.CTU1InTown5^/71; Адский Троглодит
+!#SN:W^UE.CTU2InTown5^/75; Злой Глаз
+!#SN:W^UE.CTU3InTown5^/79; Король Минотавров
+!#SN:W^UE.CTU4InTown5^/229;  Легендарный минотавр [гипер]
+!#SN:W^UE.CTU5InTown5^/83; Чёрный Дракон
+!#SN:W^UE.CTU6InTown5^/-1;
+
+!#SN:W^UE.CTU1InTown6^/89; Орк-Вождь
+!#SN:W^UE.CTU2InTown6^/91; Огр-Шаман
+!#SN:W^UE.CTU3InTown6^/93; Птица Грома
+!#SN:W^UE.CTU4InTown6^/236;  Громовой птероящер [гипер]
+!#SN:W^UE.CTU5InTown6^/95; Король Циклопов
+!#SN:W^UE.CTU6InTown6^/97; Древнее Чудище
+
+!#SN:W^UE.CTU1InTown7^/99; Гнолл-Мародёр
+!#SN:W^UE.CTU2InTown7^/101; Ящер-Воин
+!#SN:W^UE.CTU3InTown7^/241;  Ящер-гвардеец [гипер]
+!#SN:W^UE.CTU4InTown7^/103; Могучая Горгона
+!#SN:W^UE.CTU5InTown7^/109; Виверн-Монарх
+!#SN:W^UE.CTU6InTown7^/111; Гидра Хаоса
+
+!#SN:W^UE.CTU1InTown8^/119; Фея
+!#SN:W^UE.CTU2InTown8^/123; Элементаль Льда
+!#SN:W^UE.CTU3InTown8^/248;  Морская нимфа [гипер]
+!#SN:W^UE.CTU4InTown8^/129; Элементаль Энергии
+!#SN:W^UE.CTU5InTown8^/121; Элементаль Магии
+!#SN:W^UE.CTU6InTown8^/131; Феникс
+
+********************************************************************************
+
+
+; Существа, получаемые при улучшении
+!#SN:W^UE.Upgrade1InTown0^/198; Элитный арбалетчик
+!#SN:W^UE.Upgrade2InTown0^/200; Паладин
+!#SN:W^UE.Upgrade3InTown0^/169; Фанатик войны
+!#SN:W^UE.Upgrade4InTown0^/201; Чемпион войны
+!#SN:W^UE.Upgrade5InTown0^/150; Верховный архангел
+!#SN:W^UE.Upgrade6InTown0^/-1;
+
+!#SN:W^UE.Upgrade1InTown1^/192; Сильванский кентавр
+!#SN:W^UE.Upgrade2InTown1^/203; Гном-Лепрекон
+!#SN:W^UE.Upgrade3InTown1^/204; Эльф-сатир
+!#SN:W^UE.Upgrade4InTown1^/207; Эльф-фавн
+!#SN:W^UE.Upgrade5InTown1^/205; Страж леса
+!#SN:W^UE.Upgrade6InTown1^/151; Алмазный дракон
+
+!#SN:W^UE.Upgrade1InTown2^/173; Санта-гремлин
+!#SN:W^UE.Upgrade2InTown2^/208; Химера
+!#SN:W^UE.Upgrade3InTown2^/116; Золотой Голем
+!#SN:W^UE.Upgrade4InTown2^/117; Алмазный Голем
+!#SN:W^UE.Upgrade5InTown2^/210; Джинн-воин
+!#SN:W^UE.Upgrade6InTown2^/152; Громовержец
+
+!#SN:W^UE.Upgrade1InTown3^/213; Суккуб
+!#SN:W^UE.Upgrade2InTown3^/215; Адская тварь
+!#SN:W^UE.Upgrade3InTown3^/214; Кошмар
+!#SN:W^UE.Upgrade4InTown3^/216; Адский конь
+!#SN:W^UE.Upgrade5InTown3^/218; Ифрит-Раджа
+!#SN:W^UE.Upgrade6InTown3^/153; Барон ада
+
+!#SN:W^UE.Upgrade1InTown4^/224; Механизированный зомби
+!#SN:W^UE.Upgrade2InTown4^/159; Привидение
+!#SN:W^UE.Upgrade3InTown4^/221; Граф Ужаса
+!#SN:W^UE.Upgrade4InTown4^/223; Жнец
+!#SN:W^UE.Upgrade5InTown4^/154; Кровавый дракон
+!#SN:W^UE.Upgrade6InTown4^/-1;
+
+!#SN:W^UE.Upgrade1InTown5^/225; Троглодит-Изверг
+!#SN:W^UE.Upgrade2InTown5^/226; Смертельный глаз
+!#SN:W^UE.Upgrade3InTown5^/229; Легендарный минотавр
+!#SN:W^UE.Upgrade4InTown5^/230; Проклятый минотавр
+!#SN:W^UE.Upgrade5InTown5^/155; Тёмный дракон
+!#SN:W^UE.Upgrade6InTown5^/-1;
+
+!#SN:W^UE.Upgrade1InTown6^/234; Орк-Гладиатор
+!#SN:W^UE.Upgrade2InTown6^/235; Повелитель огров
+!#SN:W^UE.Upgrade3InTown6^/236; Громовой птероящер
+!#SN:W^UE.Upgrade4InTown6^/237; Громовой дракон
+!#SN:W^UE.Upgrade5InTown6^/238; Циклоп-разрушитель
+!#SN:W^UE.Upgrade6InTown6^/156; Чудище-привидение
+
+!#SN:W^UE.Upgrade1InTown7^/239; Оборотень
+!#SN:W^UE.Upgrade2InTown7^/241; Ящер-гвардеец
+!#SN:W^UE.Upgrade3InTown7^/242; Ящер-лейтенант
+!#SN:W^UE.Upgrade4InTown7^/244; Кислотная горгона
+!#SN:W^UE.Upgrade5InTown7^/168; Змей Горыныч
+!#SN:W^UE.Upgrade6InTown7^/157; Кошмарная гидра
+
+!#SN:W^UE.Upgrade1InTown8^/246; Волшебница
+!#SN:W^UE.Upgrade2InTown8^/248; Морская нимфа
+!#SN:W^UE.Upgrade3InTown8^/250; Дух океана
+!#SN:W^UE.Upgrade4InTown8^/249; Плазматический элементаль
+!#SN:W^UE.Upgrade5InTown8^/251; Астральный элементаль
+!#SN:W^UE.Upgrade6InTown8^/158; Дух погребального костра
+
+********************************************************************************
+
+
+; Существа, потенциально блокируемые в городах
+; CTB Creatures To Block
+!#SN:W^UE.CTBInTown0^/1;
+
+!#SN:W^UE.CTBInTown1^/5;
+
+!#SN:W^UE.CTBInTown2^/5;
+
+!#SN:W^UE.CTBInTown3^/5;
+
+!#SN:W^UE.CTBInTown4^/3;
+
+!#SN:W^UE.CTBInTown5^/-1;
+
+!#SN:W^UE.CTBInTown6^/5;
+
+!#SN:W^UE.CTBInTown7^/4;
+
+!#SN:W^UE.CTBInTown8^/4;
+
+********************************************************************************
+
+
+; Номера апгрейдов для жилищ
+
+!#SN:W^UE.Upgr.DwID57^/1; Элитный арбалетчик
+!#SN:W^UE.Upgr.DwID58^/2; Паладин
+!#SN:W^UE.Upgr.DwID35^/3; Фанатик войны
+!#SN:W^UE.Upgr.DwID5^/4;  Чемпион войны
+!#SN:W^UE.Upgr.DwID8^/5;  Верховный архангел
+!#SN:W^UE.Upgr.DwID80^/5; Верховный архангел
+
+!#SN:W^UE.Upgr.DwID6^/1;  Сильванский кентавр
+!#SN:W^UE.Upgr.DwID12^/2; Гном-Лепрекон
+!#SN:W^UE.Upgr.DwID15^/3; Эльф-сатир
+!#SN:W^UE.Upgr.DwID15Extra^/4; Эльф-фавн
+!#SN:W^UE.Upgr.DwID45^/5; Страж леса
+!#SN:W^UE.Upgr.DwID28^/6; Алмазный дракон
+!#SN:W^UE.Upgr.DwID81^/6; Алмазный дракон
+
+!#SN:W^UE.Upgr.DwID43^/1; Санта-гремлин
+!#SN:W^UE.Upgr.DwID17^/2; Химера
+*#SN:W^UE.Upgr.DwID1^/3;  Золотой Голем
+*#SN:W^UE.Upgr.DwID1^/4;  Алмазный Голем
+!#SN:W^UE.Upgr.DwID18^/5; Джинн-воин
+!#SN:W^UE.Upgr.DwID44^/6; Громовержец
+!#SN:W^UE.Upgr.DwID82^/6; Громовержец
+
+!#SN:W^UE.Upgr.DwID29^/1; Суккуб
+!#SN:W^UE.Upgr.DwID27^/2; Адская тварь
+!#SN:W^UE.Upgr.DwID37^/3; Кошмар
+!#SN:W^UE.Upgr.DwID37Extra^/4; Адский конь
+!#SN:W^UE.Upgr.DwID14^/5; Ифрит-Раджа
+!#SN:W^UE.Upgr.DwID10^/6; Барон ада
+!#SN:W^UE.Upgr.DwID83^/6; Барон ада
+
+!#SN:W^UE.Upgr.DwID55^/1; Механизированный зомби
+!#SN:W^UE.Upgr.DwID48^/2; Привидение
+!#SN:W^UE.Upgr.DwID53^/3; Граф Ужаса
+!#SN:W^UE.Upgr.DwID3^/4; Жнец
+!#SN:W^UE.Upgr.DwID4^/5; Кровавый дракон
+!#SN:W^UE.Upgr.DwID84^/5; Кровавый дракон
+
+!#SN:W^UE.Upgr.DwID46^/1; Троглодит-Изверг
+!#SN:W^UE.Upgr.DwID2^/2; Смертельный глаз
+!#SN:W^UE.Upgr.DwID34^/3; Легендарный минотавр
+!#SN:W^UE.Upgr.DwID34Extra^/4; Проклятый минотавр
+!#SN:W^UE.Upgr.DwID41^/5; Тёмный дракон
+!#SN:W^UE.Upgr.DwID85^/5; Тёмный дракон
+
+!#SN:W^UE.Upgr.DwID39^/1; Орк-Гладиатор
+!#SN:W^UE.Upgr.DwID38^/2; Повелитель огров
+!#SN:W^UE.Upgr.DwID42^/3; Громовой птероящер
+!#SN:W^UE.Upgr.DwID42Extra^/4; Громовой дракон
+!#SN:W^UE.Upgr.DwID9^/5; Циклоп-разрушитель
+!#SN:W^UE.Upgr.DwID1^/6; Чудище-привидение
+!#SN:W^UE.Upgr.DwID86^/6; Чудище-привидение
+
+!#SN:W^UE.Upgr.DwID20^/1; Оборотень
+!#SN:W^UE.Upgr.DwID30^/2; Ящер-гвардеец
+!#SN:W^UE.Upgr.DwID30Extra^/3; Ящер-лейтенант
+!#SN:W^UE.Upgr.DwID23^/4; Кислотная горгона
+!#SN:W^UE.Upgr.DwID49^/5; Змей Горыныч
+!#SN:W^UE.Upgr.DwID28^/6; Кошмарная гидра
+!#SN:W^UE.Upgr.DwID87^/6; Кошмарная гидра
+
+!#SN:W^UE.Upgr.DwID59^/1; Волшебница
+!#SN:W^UE.Upgr.DwID47^/2; Морская нимфа
+!#SN:W^UE.Upgr.DwID72^/2; Морская нимфа
+!#SN:W^UE.Upgr.DwID47Extra^/3; Дух океана
+!#SN:W^UE.Upgr.DwID82Extra^/3; Дух океана
+!#SN:W^UE.Upgr.DwID16^/4; Плазматический элементаль
+!#SN:W^UE.Upgr.DwID71^/4; Плазматический элементаль
+!#SN:W^UE.Upgr.DwID60^/5; Астральный элементаль
+!#SN:W^UE.Upgr.DwID61^/6; Дух погребального костра
+!#SN:W^UE.Upgr.DwID88^/6; Дух погребального костра
+
+********************************************************************************
+
+
+; Имена существ и их улучшений для диалога улучшения
+
+!#SN:W^UE.CName1InTown0^/^{Тяжелых} {арбалетчиков} до {Элитных} {арбалетчиков}^; Элитный арбалетчик
+!#SN:W^UE.CName2InTown0^/^{Крестоносцев} до {Паладинов}^; Паладин
+!#SN:W^UE.CName3InTown0^/^{Фанатиков} до {Фанатиков} {войны}^; Фанатик войны
+!#SN:W^UE.CName4InTown0^/^{Чемпионов} до {Чемпионов} {войны}^; Чемпион войны
+!#SN:W^UE.CName5InTown0^/^{Архангелов} до {Верховных} {Архангелов}^; Верховный архангел
+!#SN:W^UE.CName6InTown0^/^{0}^;
+
+!#SN:W^UE.CName1InTown1^/^{Капитанов} {кентавров} до {Сильванских} {кентавров}^; Сильванский кентавр
+!#SN:W^UE.CName2InTown1^/^{Боевых} {гномов} до {Гномов-лепреконов}^; Гном-Лепрекон
+!#SN:W^UE.CName3InTown1^/^{Благородных} {эльфов} до {Эльфов-сатиров}^; Эльф-сатир
+!#SN:W^UE.CName4InTown1^/^{Эльфов-сатиров} до {Эльфов-фавнов}^; Эльф-фавн
+!#SN:W^UE.CName5InTown1^/^{Дендроидов-}{солдат} до {Стражей} {леса}^; Страж леса
+!#SN:W^UE.CName6InTown1^/^{Золотых} {Драконов} до {Алмазных} {Драконов}^; Алмазный дракон
+
+!#SN:W^UE.CName1InTown2^/^{Мастер-гремлинов} до {Санта-гремлинов}^; Санта-гремлин
+!#SN:W^UE.CName2InTown2^/^{Обсидиановых} {гаргулий} до {Химер}^; Химера
+!#SN:W^UE.CName3InTown2^/^{Железных} {големов} до {Золотых} {големов}^; Золотой Голем
+!#SN:W^UE.CName4InTown2^/^{Золотых} {големов} до {Алмазных} {големов}^; Алмазный Голем
+!#SN:W^UE.CName5InTown2^/^{Мастеров-джиннов} до {Джиннов-воинов}^; Джинн-воин
+!#SN:W^UE.CName6InTown2^/^{Титанов} до {Громовержцев}^; Громовержец
+
+!#SN:W^UE.CName1InTown3^/^{Чертей} до {Суккубов}^; Суккуб
+!#SN:W^UE.CName2InTown3^/^{Церберов} до {Адских} {тварей}^; Адская тварь
+!#SN:W^UE.CName3InTown3^/^{Рогатых} {демонов} до {Кошмаров}^; Кошмар
+!#SN:W^UE.CName4InTown3^/^{Кошмаров} до {Адских} {коней}^; Адский конь
+!#SN:W^UE.CName5InTown3^/^{Ифритов-Султанов} до {Ифритов-Раджей}^; Ифрит-Раджа
+!#SN:W^UE.CName6InTown3^/^{Архидьяволов} до {Баронов} {Ада}^; Барон ада
+
+!#SN:W^UE.CName1InTown4^/^{Зомби} до {Механизированных} {зомби}^; Механизированный зомби
+!#SN:W^UE.CName2InTown4^/^{Призраков} до {Привидений}^; Привидение
+!#SN:W^UE.CName3InTown4^/^{Лордов} {Вампиров} до {Графов} {Ужаса}^; Граф Ужаса
+!#SN:W^UE.CName4InTown4^/^{Рыцарей} {смерти} до {Жнецов}^; Жнец
+!#SN:W^UE.CName5InTown4^/^{Драконов-привидений} до {Кровавых} {драконов}^; Кровавый дракон
+!#SN:W^UE.CName6InTown4^/^{0}^;
+
+!#SN:W^UE.CName1InTown5^/^{Адских} {троглодитов} до {Троглодитов-извергов}^; Троглодит-Изверг
+!#SN:W^UE.CName2InTown5^/^{Злых} {глаз} до {Смертельных} {глаз}^; Смертельный глаз
+!#SN:W^UE.CName3InTown5^/^{Королей-минотавров} до {Легендарных} {минотавров}^; Легендарный минотавр
+!#SN:W^UE.CName4InTown5^/^{Легендарных} {минотавров} до {Проклятых} {минотавров}^; Проклятый минотавр
+!#SN:W^UE.CName5InTown5^/^{Черных} {драконов} до {Темных} {драконов}^; Тёмный дракон
+!#SN:W^UE.CName6InTown5^/^{0}^;
+
+!#SN:W^UE.CName1InTown6^/^{Вождей} {орков} до {Орков-гладиаторов}^; Орк-Гладиатор
+!#SN:W^UE.CName2InTown6^/^{Огров-шаманов} до {Повелителей} {огров}^; Повелитель огров
+!#SN:W^UE.CName3InTown6^/^{Громовых} {птиц} до {Громовых} {птероящеров}^; Громовой птероящер
+!#SN:W^UE.CName4InTown6^/^{Громовых} {птероящеров} до {Громовых} {драконов}^; Громовой дракон
+!#SN:W^UE.CName5InTown6^/^{Королей} {циклопов} до {Циклопов-разрушителей}^; Циклоп-разрушитель
+!#SN:W^UE.CName6InTown6^/^{Древних} {чудищ} до {Чудищ-привидений}^; Чудище-привидение
+
+!#SN:W^UE.CName1InTown7^/^{Гноллов-мародеров} до {Оборотней}^; Оборотень
+!#SN:W^UE.CName2InTown7^/^{Ящеров-воинов} до {Ящеров-гвардейцев}^; Ящер-гвардеец
+!#SN:W^UE.CName3InTown7^/^{Ящеров-гвардейцев} до {Ящеров-лейтенантов}^; Ящер-лейтенант
+!#SN:W^UE.CName4InTown7^/^{Могучих} {горгон} до {Кислотных} {горгон}^; Кислотная горгона
+!#SN:W^UE.CName5InTown7^/^{Виверн-монархов} до {Змеев} {Горынычей}^; Змей Горыныч
+!#SN:W^UE.CName6InTown7^/^{Гидр} {хаоса} до {Кошмарных} {гидр}^; Кошмарная гидра
+
+!#SN:W^UE.CName1InTown8^/^{Цветочных} {фей} до {Волшебниц}^; Волшебница
+!#SN:W^UE.CName2InTown8^/^{Ледяных} {элементалей} до {Морских} {нимф}^; Морская нимфа
+!#SN:W^UE.CName3InTown8^/^{Морских} {нимф} до {Духов} {океана}^; Дух океана
+!#SN:W^UE.CName4InTown8^/^{Энергитических} {элементалей} до {Плазматических} {элементалей}^; Плазматический элементаль
+!#SN:W^UE.CName5InTown8^/^{Магических} {элементалей} до {Астральных} {элементалей}^; Астральный элементаль
+!#SN:W^UE.CName6InTown8^/^{Фениксов} до {Духов} {погребального} {костра}^; Дух погребального костра
+
+********************************************************************************
+
 
 *Суперулучшение
 !?PI;
+
+; Не настраиваем в режиме SoD
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим активирован
+
 !!VRv6768:C-1; [Герой по умолчанию - текущий]
 
-!?CM1;
-!!CM:F?y1;
-!!FU&y1<>0:E;
-!!CM:I?y2;
-!!SN:L^Era.dll^/?y3 Ay3/^GetButtonID^/?y4;  [GetButtonID]
-!!SN:Ey4/0/^NewUpgrades^;
-!!if&y2=v1:;
- !!CA-1:H1/?v6768;
- !!FU15000&v6768<>-1:P;
- !!VRv6768:S-1;
- !!UN:R4;
-!!el:; Town Renaming
- !!UN:P169/?v1; [Check if town renaming option is enabled]
- !!FU10813&v1=1/y2=149:P;  [Call renaming function if town name is clicked]
-!!en;
+; Опции балансировки
 
-*?CM1&999;
-**CM:F?v1;
-**FU&v1>0:E;
-**CM:A?i/?y1;
-**CM:I?v4;
-**CA-1:H1/?v6768;
-**CA-1:O?v2;
-**OW:C?v3;
-**FU15000&v2=v3/v6768<>-1/v4=158/i>79/i<118:P;
-**VRv6768:S-1;
-**UN:R4;
+!!UN:P631/?y2; Ифрит-Раджа вместо Адской твари
+!!SN&y2=1:W^UE.CTBInTown3^/2; Меняем блокируемое существо, если опция включена
 
-*?MM1&999;
-**CM:I?v1;
-**VRz1:Sz125203;
-**CM&v1=158:Mz1;
+!!UN:P632/?y3; Страж Леса вместо Сильванского кентавра
+!!SN&y3=1:W^UE.CTBInTown1^/1; Меняем блокируемое существо, если опция включена
 
-!?FU15000;
-!!CA-1:T?y80;
-!!CA-1:B3/37;
-!!VRy81&1:S1;
-!!CA-1&-1:B3/19;
-!!VRy81&1:S1;
-!!CA-1:B3/38;
-!!VRy82&1:S1;
-!!CA-1&-1:B3/19;
-!!VRy82&1:S1;
-!!CA-1:B3/39;
-!!VRy83&1:S1;
-!!CA-1&-1:B3/25;
-!!VRy83&1:S1;
-!!CA-1:B3/40;
-!!VRy84&1:S1;
-!!CA-1:B3/41;
-!!VRy85&1:S1;
-!!CA-1:B3/42;
-!!VRy86&1:S1;
-!!CA-1:B3/43;
-!!VRy87&1:S1;
-!!FU(UpgradeArchers)&y80=0/y82=1:P;
-!!FU15001&y80=0/y84=1:P;
-!!FU15002&y80=0/y85=1:P;
-!!FU15003&y80=0/y86=1:P;
-!!FU15004&y80=0/y87=1:P;
-!!FU15005&y80=1/y81=1:P;
-!!FU15006&y80=1/y82=1:P;
-!!FU15007&y80=1/y83=1:P;
-!!FU(UpgradeDendroids)&y80=1/y85=1:P;
-!!FU15008&y80=1/y87=1:P;
-!!FU15009&y80=2/y81=1:P;
-!!FU15010&y80=2/y82=1:P;
-!!FU15011&y80=2/y83=1:P;
-!!FU(UpgradeGenies)&y80=2/y85=1:P;
-!!FU15012&y80=2/y87=1:P;
-!!FU15013&y80=3/y81=1:P;
-!!FU(UpgradeCerb)&y80=3/y83=1:P;
-!!FU15015&y80=3/y84=1:P;
-!!FU15014&y80=3/y86=1:P;
-!!FU15016&y80=3/y87=1:P;
-!!FU15017&y80=4/y82=1:P;
-!!FU15018&y80=4/y83=1:P;
-!!FU(UpgradeVamp)&y80=4/y84=1:P;
-!!FU15019&y80=4/y86=1:P;
-!!FU15020&y80=4/y87=1:P;
-!!FU15021&y80=5/y81=1:P;
-!!FU15022&y80=5/y83=1:P;
-!!FU15023&y80=5/y85=1:P;
-!!FU15024&y80=5/y87=1:P;
-!!FU15025&y80=6/y83=1:P;
-!!FU15026&y80=6/y84=1:P;
-!!FU15027&y80=6/y85=1:P;
-!!FU(UpgradeCycl)&y80=6/y86=1:P;
-!!FU15028&y80=6/y87=1:P;
-!!FU15029&y80=7/y81=1:P;
-!!FU15030&y80=7/y82=1:P;
-!!FU(UpgradeGorgons)&y80=7/y85=1:P;
-!!FU15031&y80=7/y86=1:P;
-!!FU15032&y80=7/y87=1:P;
-!!FU15033&y80=8/y81=1:P;
-!!FU15034&y80=8/y83=1:P;
-!!FU(UpgradeEnergo)&y80=8/y84=1:P;
-!!FU15035&y80=8/y86=1:P;
-!!FU15036&y80=8/y87=1:P;
+!!UN:P633/?y4; Блокировка Плазматического элементаля
+!!if&y4=1:;
+ !!SN:W^UE.CTBInTown8^/-1; Убираем блокируемое существо, если опция включена
+ ; Нет, все-таки оставляем в таблице, чтобы функции внешних жилищ было проще работать... Хотя... Все же убираем.
+ !!SN:W^UE.LTU4InTown8^/3; Запрещаем улучшение
+ !!MA:U129/-2;
+!!en:;
 
-*Функция инициализации
-!?FU15043;
-!!VRv1030:C0;
-!!VRv1040:C0;
-!!HEv6768:C1/x2/?v1030/?v1040; [-цифра до-]
-!!FU&v1040=0:E;
 
-!!VRv1011:C0;
-!!VRv1012:C0;
-!!VRv1013:C0;
-!!VRv1014:C0;
-!!VRv1015:C0;
-!!VRv1016:C0;
-!!VRv1020:C0;
-!!VRv1020&x1=0/v6771=1/-1000:C1;  [если включен автоапгрейд]
-!!VRv1020&x1=1/v6770=1/-1000:C1;  [если включен автоапгрейд]
-!!IF:V1/0;
+* Триггер для ситуаций, когда сторонний мод (например Пучина) будет изменять тип улучшаемых существ и требуемые навыки
+!!FU(OnThirdUpgradeSystemSetup):P;
 
-*Функция обновления армии
-!?FU15044;
-!!FU&v1040=0:E;
-!!VRy1:S127085;
-!!VRy1:+x1;
-!!IF&1000/v1020=0:M1/zy1;
-!!FU&v1020=0:E;
-!!VRy1:+1;
-!!IF&1000:Q1/21/x2/2/zy1;
-!!HEv6768&1000/1:C1/v1030/x2/d;  [-цифра до и после-]
-!!HEv6768&-1000:C1/v1030/x2/d;  [-цифра до и после-]
 
-!$OB98/0;
-!!FU(UpgradeArchers)&-1000:P;
 
-*Башня арбалетчиков
-!$OB17/57; [-цифра жилища-]
-!!FU(UpgradeArchers):P;
+; Блокировка шестого существа
 
-!?FU(UpgradeArchers);
-!!FU15043:P0/3;
-!!HEv6768:S6/?v1011; [Лидерство]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P86/198;
+!!UN:P630/?y1; Проверка на разрешение шестого улучшения
+!!if&y1=0:; Если опция заблокирована
+ !!re y2/0/8:; Проходимся циклом по
+  !!SN:W^UE.CTBInTown%Y2^/?y3; Уровень блокируемого существа
+  !!co&y3=-1:; Пропуск, если нечего блокировать
+  !!SN:W^UE.CTU%Y3InTown%Y2^/?y4; Получить шестое существо города
+  !!MA&y4>-1:U3/-2; Существо не улучшается, если оно есть таблице
+ !!en:;
+ !!MA:U155/-2; Отдельная блокировка улучшения Темных драконов
+!!en:;
 
-!$OB98/0;
-!!FU15001&-1000:P;
+; Настройка классического улучшения
+!!re y5/0/8:;
+ !!re y6/1/6:;
+  !!SN:W^UE.CTU%Y6InTown%Y5^/?y7; Тип существа, которое улучшается в городе
+  !!SN:W^UE.Upgrade%Y6InTown%Y5^/?y8; Тип существа, которое получается в городе
+  !!MA&y7>-1:Uy7/y8; Разрешаем классическое улучшение, если есть во что улучшать
+ !!en:;
+!!en:;
 
-*Казармы
-!$OB17/58; [-цифра жилища-]
-!!FU15001:P;
+; Упрощение перевода
 
-!?FU15001;
-!!FU15043:P0/7;
-!!HEv6768:S6/?v1011; [Лидерство]
-!!HEv6768:S22/?v1012; [Нападение]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P0/200;
+*!SN:W^UE.EnglishLanguagePackIsActive^/?y50; Включен ли английский перевод
 
-!$OB98/0;
-!!FU15002&-1000:P;
 
-*Монастырь
-!$OB17/35; [-цифра жилища-]
-!!FU15002:P;
+; Клик мышкой в экране города
+!?CM1&1000;[]
 
-!?FU15002;
-!!FU15043:P0/9;
-!!HEv6768:S6/?v1011; [Лидерство]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S7/?v1013; [Мудрость]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P2/169;
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
 
-!$OB98/0;
-!!FU15003&-1000:P;
+!!CM:F?y1 I?y2;
+!!SN:F^GetButtonID^/^NewUpgrades^; Получаем ID нашей кнопки
+!!FU|v1<>y2/y1<>0:E;[]
+!!CA-1:H1/?v6768; Получаем героя в городе
+!!if&v6768<>-1:;
+ !!FU(SetupUpgrades):P; Если есть, вызываем функцию
+ !!VRv6768:S-1; [Герой по умолчанию - текущий]
+ !!UN:R4; Обновляем экран
+!!en:;
 
-*Ипподром
-!$OB17/05; [-цифра жилища-]
-!!FU15003:P;
 
-!?FU15003;
-!!FU15043:P0/11;
-!!HEv6768:S6/?v1011; [Лидерство]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S7/?v1013; [Мудрость]
-!!HEv6768:S2/?v1014; [Логистика]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P4/201;
+!?FU(SetupUpgrades);
+!!CA-1:T?y1; Получаем тип города
+!!re y2/1/6:; Проходимся циклом по уровням существ
+ !!SN:W^UE.LTU%Y2InTown%Y1^/?y3;
+ !!co&y3=-1:; Пропуск, если существо этого уровня не улучшается
+ !!co&y3=6/v6770=0:; Пропуск, если это существо седьмого уровня, и не включена фора ИИ
+ !!VRy3:+37; Узнаем номер требуемого здания
+ !!CA-1:B3/y3; И проверяем его постройку
+ !!if&-1:; Если здания нет
+  !!SN:W^UE.LTU%Y2InTown%Y1Extra^/?y3;
+  !!CA-1:B3/y3; Проверяем постройку орды
+  !!co:; Пропуск, если нужное здание не построено
+ !!en:;
+ !!FU(TryToUpgrade):Py1/y2;
+!!en:;
 
-!$OB98/0;
-!!FU15004&-1000:P;
+!?FU(TryToUpgrade);
+; x1 - тип города
+; x2 - номер существа
+; v6768 - номер героя или -1 (текущий герой)
 
-*Портал славы
-!$OB17/08; [-цифра жилища-]
-!!FU15004:P;
+!!UN:P630/?y1; Проверка на разрешение шестого улучшения
+!!SN:W^UE.CTBInTown%X1^/?y2; Номер блокируемого существа
+!!FU&y1=0/x2=y2:E; Пропуск, если это шестое существо и опция заблокирована
 
-!?FU15004;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/13;
-!!HEv6768:S6/?v1011; [Лидерство]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S7/?v1013; [Мудрость]
-!!HEv6768:S2/?v1014; [Логистика]
-!!HEv6768:S13/?v1015; [Поместья]
-!!HEv6768:S27/?v1016; [Первая помощь]
-!!VRv1020&v1011>=1/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P6/150;
+!!SN:W^UE.CTU%X2InTown%X1^/?y4; Тип существа, которое улучшается в этом городе
+*!VRy5:S0; Команда C1 не обновляет значение переменной, если существ нет - сделаем это самостоятельно
+* Так как данный код используется не в цикле, а в уже самостоятельной Функции, обнуление происходит автоматически
+!!HEv6768:C1/y4/?n/?y5; Кол-во существ у героя
+!!FU&y5=0:E; Пропуск, если отсутствуют
+!!SN:W^UE.SkillCount%X2InTown%X1^/?y6;
+!!re y7/1/y6:; Проходимся циклом по требуемым навыкам
+ !!SN:W^UE.Cr%X2S%Y7InTown%X1^/?y8; Тип навыка
+ !!VRv1:S127400 +y8;
+ !!VRv2:Sy7 +2;
+ !!VRzv2:Szv1; Получаем название навыка
+ !!if&1:; Если еще есть шанс улучшить
+  !!HEv6768:Sy8/?y9; Проверяем навык у героя
+  !!if&-1000:; Особые правила для ИИ
+   !!VRy9&y9>0:S3; ИИ достаточно иметь базовые навыки
+  !!en:;
+  !!if&y9<3:; Если уровень навыка слишком низок
+   !!IF:V1/0; Флаг 1 в любом случае установлен, так как мы проверяли здания. Почему бы не использовать его в качестве статуса разрешения улучшения.
+   !!br&-1000:; Если герой не может улучшать, выходим из цикла
+  !!en:;
+ !!en:;
+!!en:;
 
-!$OB98/1;
-!!FU15005&-1000:P;
+!!if&1:; Если герой может улучшать
+ !!SN:W^UE.Upgrade%X2InTown%X1^/?y10; Тип существа, которое получается в этом городе
+ !!if&1000:; Если игрок - человек
+  !!SN:W^UE.CName%X2InTown%X1^/?z2; Получаем текст подсказки
+  !!VRz1:Sz127670; Настраиваем подсказку
+  !!IF:Q1/21/y4/21/y10/2/z1; Вопрос
+  !!FU&-1:; Пропуск, если игрок не хочет улучшать
+ !!en:;
+ !!HEv6768:C1/y4/y10/d/0/1; Замена существа у героя с сохранением опыта (см. последний параметр)
+!!el:; Иначе
+ !!if&1000:; Если игрок - человек
+  !!SN:W^UE.CName%X2InTown%X1^/?z2; Получаем текст подсказки
+  !!VRv3:Sy6 +127650;
+  !!VRz1:Szv3; Настраиваем подсказку
+  !!IF:M1/z1; Сообщение для игрока
+ !!en:;
+!!en:;
 
-*Конюшни кентавров
-!$OB17/6; [-цифра жилища-]
-!!FU15005:P;
 
-!?FU15005;
-!!FU15043:P0/15;
-!!HEv6768:S1/?v1011; [Меткость]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P8/192;
+; Set hook for AI + хук на отключение кнопки апгрейда.
+!?FU(OnGameEnter);
+!!SN:L^EraPlugins\erm_hooker.era^/?y1;   [проверили плагин]
+!!FU&y1=0:E;                             [выход, если его НЕТ]
+!!SN:Ay1/^SetHook^/?y2;                  [получить адрес функции SetHook]
+!!SN:Ey2/1/5397384/15057;                При улучшении армии
+*!SN:Ey2/1/5397384/15036;                При подсчете армии у верхнего героя
+!!SN:Ey2/1/4374861/15035;                При добавлении нанимаемого стека в армию
 
-!$OB98/1;
-!!FU15006&-1000:P;
+!!SN:Ey2/1/6053008/(UE_OnPlaceTownBttns);
 
-*Коттедж гномов
-!$OB17/12; [-цифра жилища-]
-!!FU15006:P;
 
-!?FU15006;
-!!FU15043:P0/17;
-!!HEv6768:S9/?v1011; [Удача]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P10/203;
+; Отключение кнопки апгрейда в режиме SoD.
+!?FU(UE_OnPlaceTownBttns);
 
-!$OB98/1;
-!!FU15007&-1000:P;
+!!UN:P650/?y1;
+!!FU&y1=0:E; Выход, если режим SoD не активирован
 
-*Усадьба
-!$OB17/15; [-цифра жилища-]
-!!FU15007:P;
+!!UN:Cx1/(STRUCT_HOOK_CONTEXT_EBP)/(UNC_INT)/?(ebp:y); Получаем регистр ebp
+!!UN:C(ebp)/-16/(UNC_INT)/?(dlg:y); Смещение на 16 байт назад (ebp-0х10)
+!!SN:F^GetButtonID^/^NewUpgrades^; Получаем ID нашей кнопки
+!!FU&v1=0:E; Выход, если не нашелся
+!!VR(itemId:y):Sv1; Сохраняем его в переменную itemId:y
+!!SN:E6288816/2/(dlg)/(itemId); Получаем нужный элемент диалога по ID
+!!FU&v1=0:E; Выход, если не нашелся
+!!VR(itemStructure:y):Sv1; Сохраняем его в переменную itemStructure:y
+!!SN:E6286720/2/(itemStructure)/6/6; Посылаем диалогу команду - скрыть элемент
 
-!?FU15007;
-!!FU15043:P0/19;
-!!HEv6768:S1/?v1011; [Меткость]
-!!HEv6768:S9/?v1012; [Удача]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P12/204;
 
-!!FU15043:P0/204;
-!!HEv6768:S1/?v1011; [Меткость]
-!!HEv6768:S9/?v1012; [Удача]
-!!HEv6768:S0/?v1013; [Поиск пути]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P14/207;
 
-!$OB98/1;
-!!FU(UpgradeDendroids)&-1000:P;
+; ИИ улучшает существ при входе в город
+!?FU15057;
 
-*Арка дендроидов
-!$OB17/45; [-цифра жилища-]
-!!FU(UpgradeDendroids):P;
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
 
-!?FU(UpgradeDendroids);
-!!FU15043:P0/23;
-!!HEv6768:S9/?v1011; [Удача]
-!!HEv6768:S0/?v1012; [Поиск пути]
-!!HEv6768:S26/?v1013; [Сопротивление]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P88/205;
+!!SN:X?y1; Hook context
+!!UN:Cy1/0/4/?y2; Hero*
+!!UN:Cy1/4/4/?y3; Town*
 
-!$OB98/1;
-!!FU15008&-1000:P;
+!!UN:Cy3/4/1/?y4; Получаем тип города
+!!UN:Cy2/26/4/?v6768; Получаем номер героя
 
-*Драконьи скалы
-!$OB17/24; [-цифра жилища-]
-!!FU15008:P;
+!!re y5/1/6:; Проходимся циклом по уровням существ
+ !!SN:W^UE.LTU%Y5InTown%Y4^/?y6;
+ !!co&y6=-1:; Пропуск, если существо этого уровня не улучшается
+ !!VRy6:+37; Узнаем номер требуемого здания
+ !!SN:E4392352/2/y3/y6/1; И проверяем его постройку
+ !!if&v1=0:; Если здания нет
+  !!SN:W^UE.LTU%Y5InTown%Y4Extra^/?y6;
+  !!SN:E4392352/2/y3/y6/1; Проверяем постройку орды
+  !!co:; Пропуск, если нужное здание не построено
+ !!en:;
+ !!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+ !!FU(TryToUpgrade):Py4/y5;
+!!en:;
 
-!?FU15008;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/27;
-!!HEv6768:S1/?v1011; [Меткость]
-!!HEv6768:S9/?v1012; [Удача]
-!!HEv6768:S0/?v1013; [Поиск пути]
-!!HEv6768:S3/?v1014; [Разведка]
-!!HEv6768:S11/?v1015; [Орлиный глаз]
-!!HEv6768:S26/?v1016; [Сопротивление]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P16/151;
+!!VRv6768:S-1; [Герой по умолчанию - текущий]
 
-!$OB98/2&-1000;
-!!FU15009:P;
 
-*Мастерская
-!$OB17/43; [-цифра жилища-]
-!!FU15009:P;
+; Для верхнего героя гарнизона (не вызывается, но пока пусть будет)
+!?FU15036;
 
-!?FU15009;
-!!FU15043:P0/29;
-!!HEv6768:S8/?v1011; [Мистицизм]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P18/173;
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
 
-!$OB98/2;
-!!FU15010&-1000:P;
+!!SN:X?y1; Hook context
+!!UN:Cy1/0/4/?y2; Hero*
+!!UN:Cy1/16/4/?y3; Town*
 
-*Парапет
-!$OB17/17; [-цифра жилища-]
-!!FU15010:P;
+!!UN:Cy3/4/1/?y4; Получаем тип города
+!!UN:Cy2/26/4/?v6768; Получаем номер героя
 
-!?FU15010;
-!!FU15043:P0/31;
-!!HEv6768:S15/?v1011; [Магия воздуха]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P20/208;
+!!re y5/1/6:; Проходимся циклом по уровням существ
+ !!SN:W^UE.LTU%Y5InTown%Y4^/?y6;
+ !!co&y6=-1:; Пропуск, если существо этого уровня не улучшается
+ !!VRy6:+37; Узнаем номер требуемого здания
+ !!SN:E4392352/2/y3/y6/1; И проверяем его постройку
+ !!if&v1=0:; Если здания нет
+  !!SN:W^UE.LTU%Y5InTown%Y4Extra^/?y6;
+  !!SN:E4392352/2/y3/y6/1; Проверяем постройку орды
+  !!co:; Пропуск, если нужное здание не построено
+ !!en:;
+ !!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+ !!FU(TryToUpgrade):Py4/y5;
+!!en:;
+!!VRv6768:S-1; [Герой по умолчанию - текущий]
 
-!$OB98/2;
-!!FU15011&-1000:P;
+!?FU15035;  Add to army
+
+!!SN:X?y1; Hook context
+!!UN:Cy1/16/4/?y2; Cr type to replace (ebx)
+!!UN:Cy1/24/4/?y3; Cr type new (ecx)
+*!FU&y2=y3|y2=-1:E; Exit if not a replacement
+!!FU&y2=-1:E; Exit if not a replacement
+!!SN:E7662803/1/y3; Upgrade of new [v1]
+!!if&y2=v1:; Add as upgraded if there is an upgrade
+ !!UN:Cy1/16/4/v1; Reset cr type
+ !!UN:Cy1/20/4/?y4; Army* (edx)
+ !!UN:Cy1/28/4/?y5; Stack ID (eax)
+ !!VRy5:*4; Calc offset
+ !!UN:Cy4/y5/4/v1; Reset cr type
+!!en:;
+
+
+; После выхода из города
+!$OB98&-1000;
+!!VRv6768:S-1; [Герой по умолчанию - текущий]
+!!HEv6768:P?y1/?y2/?y3;
+!!OBy1/y2/y3:T?v1;
+!!FU&v1<>98:E;
+!!CAy1/y2/y3:T?y4;
+!!re y5/1/6:; Проходимся циклом по уровням существ
+ !!SN:W^UE.LTU%Y5InTown%Y4^/?y6;
+ !!co&y6=-1:; Пропуск, если существо этого уровня не улучшается
+ !!VRy6:+37; Узнаем номер требуемого здания
+ !!CAy1/y2/y3:B3/y6; И проверяем его постройку
+ !!if&v1=0:; Если здания нет
+  !!SN:W^UE.LTU%Y5InTown%Y4Extra^/?y6;
+  !!CAy1/y2/y3:B3/y6; Проверяем постройку орды
+  !!co:; Пропуск, если нужное здание не построено
+ !!en:;
+ !!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+ !!FU(TryToUpgrade):Py4/y5;
+!!en:;
+
+
+
+; Триггер внешнего жилища
+!$OB17;
+
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
+
+!!OBv998/v999/v1000:U?y1; Получаем подтип
+!!SN:W^UE.Upgr.DwID%Y1^/?y2; Номер соответсвующего ему существа
+!!FU&y2<1:E; Выход, если в жилище нельзя улучшать
+!!DWv998/v999/v1000:M0/?y3/?n; Получаем тип существ, которые там живут
+!!MA:Oy3/?y4; Получаем их родной город
+!!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+!!FU(TryToUpgrade):Py4/y2; Вызываем функцию улучшения
+
+!!SN:W^UE.Upgr.DwID%Y1Extra^/?y5; Номер дополнительного существа
+!!FU&y5<1:E; Выход, если больше нельзя улучшать
+!!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+!!FU(TryToUpgrade):Py4/y5; Вызываем функцию улучшения
+
 
 *Фабрика Големов
 !$OB20/1; [-цифра жилища-]
-!!FU15011:P;
 
-!?FU15011;
-!!FU15043:P0/33;
-!!HEv6768:S8/?v1011; [Мистицизм]
-!!HEv6768:S15/?v1012; [Магия воздуха]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P22/116;
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
 
-!!FU15043:P0/116;
-!!HEv6768:S8/?v1011; [Мистицизм]
-!!HEv6768:S15/?v1012; [Магия воздуха]
-!!HEv6768:S18/?v1013; [Грамотность]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P24/117;
-
-!$OB98/2;
-!!FU(UpgradeGenies)&-1000:P;
-
-*Алтарь желаний
-!$OB17/18; [-цифра жилища-]
-!!FU(UpgradeGenies):P;
-
-!?FU(UpgradeGenies);
-!!FU15043:P0/37;
-!!HEv6768:S8/?v1011; [Мистицизм]
-!!HEv6768:S15/?v1012; [Магия воздуха]
-!!HEv6768:S18/?v1013; [Грамотность]
-!!HEv6768:S24/?v1014; [Интеллект]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P90/210;
-
-!$OB98/2;
-!!FU15012&-1000:P;
-
-*Заоблачный храм
-!$OB17/44; [-цифра жилища-]
-!!FU15012:P;
-
-!?FU15012;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/41;
-!!HEv6768:S8/?v1011; [Мистицизм]
-!!HEv6768:S15/?v1012; [Магия воздуха]
-!!HEv6768:S18/?v1013; [Грамотность]
-!!HEv6768:S4/?v1014; [Дипломатия]
-!!HEv6768:S17/?v1015; [Магия земли]
-!!HEv6768:S24/?v1016; [Интеллект]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P26/152;
-
-!$OB98/3;
-!!FU15013&-1000:P;
-
-*Котел бесов
-!$OB17/29; [-цифра жилища-]
-!!FU15013:P;
-
-!?FU15013;
-!!FU15043:P0/43;
-!!HEv6768:S22/?v1011; [Нападение]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P28/213;
-
-!$OB98/3;
-!!FU(UpgradeCerb)&-1000:P;
-
-*Клетки
-!$OB17/27; [-цифра жилища-]
-!!FU(UpgradeCerb):P;
-
-!?FU(UpgradeCerb);
-!!FU15043:P0/47;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S19/?v1012; [Тактика]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P92/215;
-
-!$OB98/3;
-!!FU15015&-1000:P;
-
-*Врата демонов
-!$OB17/37; [-цифра жилища-]
-!!FU15015:P;
-
-!?FU15015;
-!!FU15043:P0/49;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S22/?v1012; [Нападение]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P30/214;
-
-!!FU15043:P0/214;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S19/?v1013; [Тактика]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P32/216;
-
-!$OB98/3;
-!!FU15014&-1000:P;
-
-*Огненное озеро
-!$OB17/14; [-цифра жилища-]
-!!FU15014:P;
-
-!?FU15014;
-!!FU15043:P0/53;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S19/?v1013; [Тактика]
-!!HEv6768:S7/?v1014; [Мудрость]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P34/218;
-
-!$OB98/3;
-!!FU15016&-1000:P;
-
-*Покинутый дворец
-!$OB17/10; [-цифра жилища-]
-!!FU15016:P;
-
-!?FU15016;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/55;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S22/?v1012; [Нападение]
-!!HEv6768:S19/?v1013; [Тактика]
-!!HEv6768:S7/?v1014; [Мудрость]
-!!HEv6768:S8/?v1015; [Мистицизм]
-!!HEv6768:S13/?v1016; [Поместья]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P36/153;
-
-!$OB98/4;
-!!FU15017&-1000:P;
-
-*Кладбище
-!$OB17/55; [-цифра жилища-]
-!!FU15017:P;
-
-!?FU15017;
-!!FU15043:P0/59;
-!!HEv6768:S17/?v1011; [Магия земли]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P38/224;
-
-!$OB98/4;
-!!FU15018&-1000:P;
-
-*Пристанище душ
-!$OB17/48; [-цифра жилища-]
-!!FU15018:P;
-
-!?FU15018;
-!!FU15043:P0/61;
-!!HEv6768:S12/?v1011; [Чародейство]
-!!HEv6768:S17/?v1012; [Магия земли]
-!!VRv1020&v1011>=1/-1000/v1012>=1:S1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:S1;  [-перечень переменных с навыками-]
-!!FU15044:P40/159;
-
-!$OB98/4;
-!!FU(UpgradeVamp)&-1000:P;
-
-*Поместье
-!$OB17/53; [-цифра жилища-]
-!!FU(UpgradeVamp):P;
-
-!?FU(UpgradeVamp);
-!!FU15043:P0/63;
-!!HEv6768:S12/?v1011; [Чародейство]
-!!HEv6768:S8/?v1012; [Мистицизм]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P94/221;
-
-!$OB98/4;
-!!FU15019&-1000:P;
-
-*Дворец тьмы
-!$OB17/03; [-цифра жилища-]
-!!FU15019:P;
-
-!?FU15019;
-!!FU15043:P0/67;
-!!HEv6768:S12/?v1011; [Чародейство]
-!!HEv6768:S8/?v1012; [Мистицизм]
-!!HEv6768:S17/?v1013; [Магия земли]
-!!HEv6768:S23/?v1014; [Защита]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P42/223;
-
-!$OB98/4;
-!!FU15020&-1000:P;
-
-*Склеп драконов
-!$OB17/04; [-цифра жилища-]
-!!FU15020:P;
-
-!?FU15020;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/69;
-!!HEv6768:S12/?v1011; [Чародейство]
-!!HEv6768:S8/?v1012; [Мистицизм]
-!!HEv6768:S17/?v1013; [Магия земли]
-!!HEv6768:S23/?v1014; [Защита]
-!!HEv6768:S22/?v1015; [Нападение]
-!!HEv6768:S25/?v1016; [Волшебство]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P44/154;
-
-!$OB98/5;
-!!FU15021&-1000:P;
-
-*Загон
-!$OB17/46; [-цифра жилища-]
-!!FU15021:P;
-
-!?FU15021;
-!!FU15043:P0/71;
-!!HEv6768:S21/?v1011; [Обучаемость]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P46/225;
-
-!$OB98/5;
-!!FU15022&-1000:P;
-
-*Камень глаз
-!$OB17/02; [-цифра жилища-]
-!!FU15022:P;
-
-!?FU15022;
-!!FU15043:P0/75;
-!!HEv6768:S21/?v1011; [Обучаемость]
-!!HEv6768:S25/?v1012; [Волшебство]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P48/226;
-
-!$OB98/5;
-!!FU15023&-1000:P;
-
-*Лабиринт
-!$OB17/34; [-цифра жилища-]
-!!FU15023:P;
-
-!?FU15023;
-!!FU15043:P0/79;
-!!HEv6768:S21/?v1011; [Обучаемость]
-!!HEv6768:S25/?v1012; [Волшебство]
-!!HEv6768:S10/?v1013; [Баллистика]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P50/229;
-
-!!FU15043:P0/229;
-!!HEv6768:S21/?v1011; [Обучаемость]
-!!HEv6768:S25/?v1012; [Волшебство]
-!!HEv6768:S10/?v1013; [Баллистика]
-!!HEv6768:S17/?v1014; [Магия земли]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P52/230;
-
-!$OB98/5;
-!!FU15024&-1000:P;
-
-*Пещера драконов
-!$OB17/41; [-цифра жилища-]
-!!FU15024:P;
-
-!?FU15024;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/83;
-!!HEv6768:S21/?v1011; [Обучаемость]
-!!HEv6768:S25/?v1012; [Волшебство]
-!!HEv6768:S10/?v1013; [Баллистика]
-!!HEv6768:S17/?v1014; [Магия земли]
-!!HEv6768:S14/?v1015; [Магия огня]
-!!HEv6768:S0/?v1016; [Поиск пути]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P54/155;
-
-!$OB98/6;
-!!FU15025&-1000:P;
-
-*Башня орков
-!$OB17/39; [-цифра жилища-]
-!!FU15025:P;
-
-!?FU15025;
-!!FU15043:P0/89;
-!!HEv6768:S26/?v1011; [Сопротивление]
-!!HEv6768:S10/?v1012; [Баллистика]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P56/234;
-
-!$OB98/6;
-!!FU15026&-1000:P;
-
-*Форт огров
-!$OB17/38; [-цифра жилища-]
-!!FU15026:P;
-
-!?FU15026;
-!!FU15043:P0/91;
-!!HEv6768:S26/?v1011; [Сопротивление]
-!!HEv6768:S1/?v1012; [Меткость]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P58/235;
-
-!$OB98/6;
-!!FU15027&-1000:P;
-
-*Гнездо на скале
-!$OB17/42; [-цифра жилища-]
-!!FU15027:P;
-
-!?FU15027;
-!!FU15043:P0/93;
-!!HEv6768:S15/?v1011; [Магия воздуха]
-!!HEv6768:S26/?v1012; [Сопротивление]
-!!HEv6768:S1/?v1013; [Меткость]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P60/236;
-
-!!FU15043:P0/236;
-!!HEv6768:S26/?v1011; [Сопротивление]
-!!HEv6768:S10/?v1012; [Баллистика]
-!!HEv6768:S1/?v1013; [Меткость]
-!!HEv6768:S15/?v1014; [Магия воздуха]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P62/237;
-
-!$OB98/6;
-!!FU(UpgradeCycl)&-1000:P;
-
-*Пещера циклопов
-!$OB17/9; [-цифра жилища-]
-!!FU(UpgradeCycl):P;
-
-!?FU(UpgradeCycl);
-!!FU15043:P0/95;
-!!HEv6768:S10/?v1011; [Баллистика]
-!!HEv6768:S26/?v1012; [Сопротивление]
-!!HEv6768:S1/?v1013; [Меткость]
-!!HEv6768:S20/?v1014; [Артиллерия]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P98/238;
-
-!$OB98/6;
-!!FU15028&-1000:P;
-
-*Утес чудищ
-!$OB17/01; [-цифра жилища-]
-!!FU15028:P;
-
-!?FU15028;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/97;
-!!HEv6768:S26/?v1011; [Сопротивление]
-!!HEv6768:S10/?v1012; [Баллистика]
-!!HEv6768:S1/?v1013; [Меткость]
-!!HEv6768:S15/?v1014; [Магия воздуха]
-!!HEv6768:S20/?v1015; [Артиллерия]
-!!HEv6768:S22/?v1016; [Нападение]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P64/156;
-
-!$OB98/7;
-!!FU15029&-1000:P;
-
-*Хижина гноллов
-!$OB17/20; [-цифра жилища-]
-!!FU15029:P;
-
-!?FU15029;
-!!FU15043:P0/99;
-!!HEv6768:S23/?v1011; [Защита]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P66/239;
-
-!$OB98/7;
-!!FU15030&-1000:P;
-
-*Логово ящериц
-!$OB17/30; [-цифра жилища-]
-!!FU15030:P;
-
-!?FU15030;
-!!FU15043:P0/101;
-!!HEv6768:S19/?v1011; [Тактика]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P68/241;
-
-!!FU15043:P0/241;
-!!HEv6768:S23/?v1011; [Защита]
-!!HEv6768:S19/?v1012; [Тактика]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P70/242;
-
-!$OB98/7;
-!!FU(UpgradeGorgons)&-1000:P;
-
-*Логово горгон
-!$OB17/23; [-цифра жилища-]
-!!FU(UpgradeGorgons):P;
-
-!?FU(UpgradeGorgons);
-!!FU15043:P0/103;
-!!HEv6768:S23/?v1011; [Защита]
-!!HEv6768:S19/?v1012; [Тактика]
-!!HEv6768:S16/?v1013; [Магия воды]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P100/244;
-
-!$OB98/7;
-!!FU15031&-1000:P;
-
-*Гнездо вивернов
-!$OB17/49; [-цифра жилища-]
-!!FU15031:P;
-
-!?FU15031;
-!!FU15043:P0/109;
-!!HEv6768:S23/?v1011; [Защита]
-!!HEv6768:S19/?v1012; [Тактика]
-!!HEv6768:S5/?v1013; [Навигация]
-!!HEv6768:S16/?v1014; [Магия воды]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P72/168;
-
-!$OB98/7;
-!!FU15032&-1000:P;
-
-*Пруд гидр
-!$OB17/28; [-цифра жилища-]
-!!FU15032:P;
-
-!?FU15032;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/111;
-!!HEv6768:S23/?v1011; [Защита]
-!!HEv6768:S19/?v1012; [Тактика]
-!!HEv6768:S5/?v1013; [Навигация]
-!!HEv6768:S16/?v1014; [Магия воды]
-!!HEv6768:S9/?v1015; [Удача]
-!!HEv6768:S2/?v1016; [Логистика]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P74/157;
-
-!$OB98/8;
-!!FU15033&-1000:P;
-
-*Волшебный фонарик
-!$OB17/59; [-цифра жилища-]
-!!FU15033:P;
-
-!?FU15033;
-!!FU15043:P0/119;
-!!HEv6768:S25/?v1011; [Волшебство]
-!!VRv1020&v1011>=1/-1000:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P76/246;
-
-!$OB98/8;
-!!FU15034&-1000:P;
-
-*Алтарь Воды
-!$OB17/72; [-цифра жилища-]
-!!FU15034:P;
-
-*Разлом элементалей воды
-!$OB17/47; [-цифра жилища-]
-!!FU15034:P;
+!!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+!!FU(TryToUpgrade):P2/3; Вызываем функцию улучшения
+!!IF:V1/1;
+!!FU(TryToUpgrade):P2/4; Для Алмазных големов
 
 *Сопряжение элементалей
 !$OB20/0; [-цифра жилища-]
-!!FU15034:P;
-!!FU(UpgradeEnergo):P;
 
-!?FU15034;
-!!FU15043:P0/123;
-!!HEv6768:S25/?v1011; [Волшебство]
-!!HEv6768:S16/?v1012; [Магия воды]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1;  [-перечень переменных с навыками-]
-!!FU15044:P78/248;
+!!UN:P650/?y1;
+!!FU&y1=1:E; Выход, если режим SoD активирован
 
-!!FU15043:P0/248;
-!!HEv6768:S25/?v1011; [Волшебство]
-!!HEv6768:S16/?v1012; [Магия воды]
-!!HEv6768:S15/?v1013; [Магия воздуха]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=3:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P80/250;
-
-!$OB98/7;
-!!FU(UpgradeEnergo)&-1000:P;
-
-*Алтарь огня
-!$OB17/71; [-цифра жилища-]
-!!FU(UpgradeEnergo):P;
-
-*Разлом элементалей огня
-!$OB17/16; [-цифра жилища-]
-!!FU(UpgradeEnergo):P;
-
-!?FU(UpgradeEnergo);
-!!FU15043:P0/129;
-!!HEv6768:S14/?v1011; [Магия огня]
-!!HEv6768:S25/?v1012; [Волшебство]
-!!VRv1020&v1011>=1/-1000/v1012>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P102/249;
-
-!$OB98/7;
-!!FU15035&-1000:P;
-
-*Алтарь мыслей
-!$OB17/60; [-цифра жилища-]
-!!FU15035:P;
-
-!?FU15035;
-!!FU15043:P0/121;
-!!HEv6768:S16/?v1011; [Магия воды]
-!!HEv6768:S15/?v1012; [Магия воздуха]
-!!HEv6768:S14/?v1013; [Магия огня]
-!!HEv6768:S17/?v1014; [Магия земли]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P82/251;
-
-!$OB98/8;
-!!FU15036&-1000:P;
-
-*Костер
-!$OB17/61; [-цифра жилища-]
-!!FU15036:P;
-
-!?FU15036;
-!!FU&1000/v6770=0:E;
-!!FU15043:P1/131;
-!!HEv6768:S25/?v1011; [Волшебство]
-!!HEv6768:S16/?v1012; [Магия воды]
-!!HEv6768:S15/?v1013; [Магия воздуха]
-!!HEv6768:S14/?v1014; [Магия огня]
-!!HEv6768:S17/?v1015; [Магия земли]
-!!HEv6768:S27/?v1016; [Первая помощь]
-!!VRv1020&v1011>=1/-1000/v1012>=1/v1013>=1/v1014>=1/v1015>=1/v1016>=1:C1;  [компу достаточно базовых навыков]
-!!VRv1020&v1011=3/v1012=3/v1013=3/v1014=3/v1015=3/v1016=3:C1; [-перечень переменных с навыками-]
-!!FU15044:P84/158;
+!!IF:V1/1; Устанавливаем флаг 1 на истину, чтобы функция понимала, что улучшение возможно
+!!FU(TryToUpgrade):P8/2; Вызываем функцию улучшения
+!!IF:V1/1;
+!!FU(TryToUpgrade):P8/3; Для Духов Океана
+!!UN:P633/?y1;
+!!if&y1=0:; Если не включена блокировка Плазматического элементаля
+ !!IF:V1/1;
+ !!FU(TryToUpgrade):P8/4; Для Плазматических элементалей
+!!en:;
 

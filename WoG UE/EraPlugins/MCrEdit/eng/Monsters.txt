@@ -210,13 +210,13 @@ Faun Elf
 Chimera
 Steel Golem
 Warrior Genie 
-Naga Empress
-Guardian of Zeus
+Spiked Cobra
+Fire Cobra
 Succubus
 Nightmare
 Creature from Hell
 Hell Steed
-Pit Master
+Will-o-Wisp
 Efreet Rajah
 NotWitch
 NotRogue Leader
@@ -224,21 +224,21 @@ Ghoul
 Ancient Lich
 Reaper
 Mechanized Zombie
-Troglodyte Torturer
+Torturer Troglodyte
 Deadly Eye
-Harpy Sanguinary
+Adept
 Medusa Empress
 Legendary Minotaur
 Damned Minotaur
 Abyssal Dragon
-Hobgoblin Overlord
-Wolf Rider Killer
+Swamp Cobra
+Water Cobra
 Gladiator Orc
 Ogre Leader
 Lightningbird
 Thunder Dragon
 Cyclop Demolisher
-Centagnoll
+Gnoll Lycanthrope
 Elite Lizard
 Lizard Guardsman
 Lizard Captain
@@ -251,7 +251,7 @@ Sea Nymph
 Plasma Elemental
 Spirit of the Ocean
 Astral Elemental
-Divine Phoenix
+Electro Phoenix
 Forest Dragon
 Necross Dragon
 Swamp Dragon

@@ -1,0 +1,76 @@
+ZVSE
+
+**   Fishing Well ERM Script Version 1.8 created by Timothy E. Pulver
+**   Requires WoG version 3.58 or later using ERM version 2.7 or later.
+**   WoGify Name: script07.erm
+**   Updated: Nov. 18, 2009 [JHV]
+
+** This script enhances all magic wells on a map by adding an option for
+** the hero to go fishing there. It's all a matter of pure luck as to what he
+** or she will catch. It could be something silly, it could be gold or it
+** could be a chest that contains resources, an artifact or a trap. But there
+** are other dangers too -- there's a chance that something nasty will emerge
+** from within the well and attack the hero.
+
+** To install this script in a map, simply copy & paste the code into a global
+** (timed) event. Copy the entire code, from ZVSE to the end. Make sure
+** that you disable ALL colours from receiving the event and/or change
+** the event day to something like 500 or later to avoid the ERM script
+** popping up as if it were a regular event message. And of course, you'll
+** also need to put one or more Magic Wells on your map for the heroes
+** visit. Happy fishing! :-)
+
+** Changes in version 1.2: tunnel chance lowered to 1 in 10,
+** obscure result chance raised to 3 in 10, easy option for mapmaker to
+** disable tunnels if desired (see below), "dead end" option added,
+** loose coin value raised to 50-200, chest of gold value raised to
+** 200-900, maximum monsters lowered to 5, tunnel check routine (counts #
+** of wells on map) moved to occur only after a tunnel has been
+** investigated. Flags 4 and 5 added, also function 1109 and
+** v310-v313.
+
+** Changes in version 1.3: tunnel routines changed to use UN:U instead
+** of library functions, AI only visits a Well if it has less than 300 movement
+** points, and AI no longer takes a dead end passage. Also,  variables
+** 310-v313 changed to local y variables. Disabled artifacts won't show
+** up in chests now but Angel Wings and Tomes can, if not disabled by
+** the mapmaker. Even combo artifacts can show up if specifically
+** enabled for the map. If you don't have a First Aid tent, you  can gain one
+** from the "blackfly" result.
+
+** Changes in version 1.4: minor tunnel monster bug fixed. Chest result is now
+** more likely and has two extra possibilities: pink gas which increases the
+** number of one of the hero's stacks by 20% (or a scroll if an empty slot
+** comes up) and purple gas which changes all troops of one type to a
+** downgraded type.Also, traps now kill from 10-30% of creatures instantly,
+** and if you find an artifact in a chest, it's automatically equipped if you have
+** a free slot. Obscure result adds the chance of a gnome riding by who will
+** offer to buy some of your troops (for triple their gold value). This version
+** also adds support for the WoGify options dialogue, switches from a
+** regular object trigger to a post-visit object trigger, and uses the new
+** HE:C2 command to give a creature if that result comes up.
+
+** Changes in version 1.5: movement penalty removed for AI heroes visiting the
+** Fishing Well. Artifacts and scrolls automatically equipped with new HE:A4
+** command.
+
+** Version 1.6 is updated to work correctly with stack experience.
+
+** Version 1.7 adds a check for the custom picture files existing when one will
+** be used, and displays a standard dialogue with no picture if the file isn't
+** found.
+
+** Version 1.8 removes Armageddon from the "Living Scroll" category and switches
+** to using the new $spell$ library function.
+
+** JHV version allows one fish per well, disables loose change, &
+** pre-sets random (human) choices so re-loading game won't change results
+
+Flags Used in this Script: 1-6
+Variables Used in this Script: v300-v305,v308,v998-v1000,z1-z2,z300-z303
+(& z356-z357 by JHV, 10/1/2007)
+Functions Used in this Script: FU1100-FU1110, (no longer uses FU14000)
+Dialogues Used in this script: 7-9
+
+** End of Script **
+

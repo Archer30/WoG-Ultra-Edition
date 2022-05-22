@@ -699,9 +699,9 @@ Returned Values:
 !!VRy10&y3=1:S593 +y11; [new index number]
 !!VRvy10&y3=1:C213/0/3/-1/0/1/0; [freelancer's guild]
 
-!!FU671&y20>0:P16/1/3/y20/80; [replace 80% of dwarven treasuries]
-!!FU671&y20>0:P55/0/3/y20/80; [replace 80% of mystical gardens]
-!!FU671&y20>0:P84/0/3/y20/80; [replace 80% of crypts]
+!!FU671&y20>0:P16/1/3/y20/60; [replace 80% of dwarven treasuries]
+!!FU671&y20>0:P55/0/3/y20/60; [replace 80% of mystical gardens]
+!!FU671&y20>0:P84/0/3/y20/60; [replace 80% of crypts]
 
 
 ** table fields: type/subtype/footprint/terrain/back wall/edge x/edge y
@@ -764,10 +764,10 @@ Returned Values:
 !!VRy10&y3=1:S593 +y11; [new index number]
 !!VRvy10&y3=1:C80/0/1/-1/0/0/0; [sanctuary]
 
-!!FU671&y20>0:P16/3/1/y20/70; [replace 70% of imp caches]
-!!FU671&y20>0:P16/2/1/y20/70; [replace 70% of griffin conservatories]
+!!FU671&y20>0:P16/3/1/y20/55; [replace 70% of imp caches]
+!!FU671&y20>0:P16/2/1/y20/60; [replace 70% of griffin conservatories]
 !!FU671&y20>0:P64/-1/1/y20/75; [replace 75% of rally flags]
-!!FU671&y20>0:P23/-1/1/y20/25; [replace 25% of marletto towers]
+!!FU671&y20>0:P23/-1/1/y20/20; [replace 25% of marletto towers]
 
 
 ** table fields: type/subtype/footprint/terrain/back wall/edge x/edge y

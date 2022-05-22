@@ -1,0 +1,862 @@
+ZVSE2
+*Blank Creature Bank Template*
+by Perry R for ERA 3
+created 2020
+
+The idea of this template is that you can create new creature banks (CB) relatively fast by choosing any object and turn it into a scripted CB. You just need to open the erm file and edit the first part of the script and make your settings.
+For each new CB, you just copy and place a new ERM file with the name of the creature bank in your mod folder.
+The object (the new CB) can be anything. From a blank object to a Pandora Box (in theory). You just need an object ID. I recommend using the blank WoG Objects because they have no functionality.
+When you want to use object IDs that already have a functionality in-game to turn them into custom CBs, like Dragon Fly Hives, Learning Stones, or Tree of Knowledge, the standard reaction will be disabled and my script takes control.
+Later when fully developed it will emulate a 100% working creature bank like in HotA. Ideally, there will be no visual difference. If this can be achieved I don't know yet.
+Depending on your ERM skill this template will of course also allow any possible modification to your creature bank. You can create custom CB texts, fights, special rewards and conditions. I only provided the most basic functions to simulate already existing CBs.
+
+If you want any improvements or find any bugs please report on Heroes Community.
+
+
+
+****************************************************************************************************
+****************************************************************************************************
+Parameter Settings:
+-1 always means DISABLED
+
+******Object Type and Name********
+!#VRi^CB_000_Type_Number^:S63;           (Write here type number of the object)
+!#VRi^CB_000_SubType_Number^:S64;        (Write here subtype number of the object)
+
+!#VRs^CB_000_CB_Name^:S^Адская Крепость^;
+!#VRs^CB_000_CB_Greeting_Text^:S^Перед вами Адская Крепость. Вокруг ощущаются мощные потоки магической энергии - это не простое место. Вы хотите пройти внутрь?^; (Set the text that shows when you visit the CB)
+!#VRs^CB_000_CB_Cleared_Text^:S^Перед вами Адская Крепость, но, похоже, она разраблена.^; (Set the text that shows when you visit after the CB was cleared)
+
+
+******Guards********
+Set the guards and the number of each slot.
+!#VRi^CB_000_Guards_Type_Slot_0^:S54;    (Write here the Type of Creatures Guarding the CB. Check ERM help. The name of the creature in Slot 0 will be displayed when you defeat the CB.)
+!#VRi^CB_000_Guards_Type_Slot_1^:S52;
+!#VRi^CB_000_Guards_Type_Slot_2^:S53;
+!#VRi^CB_000_Guards_Type_Slot_3^:S55;
+!#VRi^CB_000_Guards_Type_Slot_4^:S153;
+!#VRi^CB_000_Guards_Type_Slot_5^:S218;
+!#VRi^CB_000_Guards_Type_Slot_6^:S-1;
+!#VRi^CB_000_Guards_Type_Slot_7^:S-1;
+
+!#VRi^CB_000_Guards_Number_Slot_0^:S5; (Write here the Number of Creatures Guarding the CB for each slot. If no type for that slot is selected (-1) also put in (-1) for the number.)
+!#VRi^CB_000_Guards_Number_Slot_1^:S10;
+!#VRi^CB_000_Guards_Number_Slot_2^:S7;
+!#VRi^CB_000_Guards_Number_Slot_3^:S3;
+!#VRi^CB_000_Guards_Number_Slot_4^:S1;
+!#VRi^CB_000_Guards_Number_Slot_5^:S5;
+!#VRi^CB_000_Guards_Number_Slot_6^:S-1;
+!#VRi^CB_000_Guards_Number_Slot_7^:S-1;
+
+!#VRi^CB_000_Different_Size^:S0;        (1=yes 0=no, If yes the creature banks can spwan with increased size based on your current settings(small) 1xSmall30%, 2xMedium30%, 3xBig30%, 4xLarge10% like in H3 or HotA. The number of guards will be multiplied. So your slection should be the "minimal" setting.)
+
+
+******Type of Object you want to replace********
+*The objects should match in size, for now. Choose Up to 5 Objects that might be replaced, each with individual chance. I recommend to replace mostly other CBs.*
+*If you replace a object that has a "shifted" yellow enter square you can correct it with the "shift" parameter.*
+
+!#VRi^CB_000_Replace_Objects^:S0;       (1=yes, 0=no. You should only chose "No" if you plan to create a custom map and place your CB yourself. With "No" the replace settings below will have no effect)
+
+!#VRi^CB_000_Replace_0_Type_Number^:S25;(Write here type number of the objects you want to search and replace. Input 0-231. Check ERM Help OB)
+!#VRi^CB_000_Replace_0_SubType_Number^:S0; (Write here subtype number of the objects you want to search and replace. Input 0-max Subtype. Check ERM Help OB)
+!#VRi^CB_000_Replace_0_Percentage^:S10; (The chance in % by which each object is replaced by the new Creature Bank. Input 0-100)
+!#VRi^CB_000_Replace_0_X_Offset^:S2; (Offset for the yellow entrance +-)
+
+
+******Battlefield********
+!#VRi^CB_000_Battlefield_Type^:S-1;     (Input (-1 til 25). Write here the Type of Battlefield you want to fight on. Current Terrain=-1. Look in ERM help under BA:B for detailed list)
+
+
+******Misc********
+!#VRi^CB_000_Revisit^:S0;               (Write here the number of days after which the CB can be visited again for example after 28 days, 0 means disabled)
+!#VRi^CB_000_Custom_Growth^:S0;         (Write here the number in percent% in which the CB should increase its guard EVERY week. If you write 10 the growth is exactly like neutrals grow)
+!#VRi^CB_000_Custom_Sound^:S1;          (1=yes, 0=no, if activated you need to find the correct sound file of the object you want to replace, use the SN trigger for it. That is necessary so that it can be replaced and your custom file can be played.)
+!#VRs^CB_000_CB_Sound^:S^DRAGOX.wav^;   (Set the name of the sound file that should be played when visiting the object, only works when CB_000_Custom_Sound is set active)
+!#VRi^CB_000_Guards_Type_Slot_Upgrade_0^:S-1; (-1 means disabled. Type in the number of which the first creature (Slot 0) should upgrade to. Chance that the creature in slot 0 gets upgraded if possible. 20%)
+!#VRi^CB_000_Generate_Random_CB^:S0;    (Not implemented, 1=yes, 0=no, I'll only do it if there is demand. This will generate a totaly random creature bank. Could be interesting.)
+!#VRi^CB_000_Stack_Experience^:S0;      (1= Enable Stack Experience, 0=Disable Stack Experience, Requirea the Stack Experience Option 900 from WoG to be enabled)
+
+
+
+[Object Trigger]
+!?OB63/64;                              (User Input required! The numbers after OB(x1/x2) must match your Type and Subtype eg:OB63/64)
+****************************************************************************************************
+****************************************************************************************************
+
+
+                                      *Start of Script*
+
+
+                          No more user input required from here on
+
+
+
+
+
+****************************************************************************************************
+*Handle what happens when the object is visited*
+!!VRy1:Si^CB_000_Replace_Objects^;
+!!if&y1=1:;
+  !!VRy1:Si^CB_000_Set_Flag_%V998_%V999_%V1000^; (Check of this object was replaced and should be a CB)
+  *!FU&y1=0:E;
+  !!HE-1:O?y2;                          (Get Hero Owner)
+  !!OB998&y1=1/y2>=0/1000:Dy2;          (Disable Object for current player)
+!!en:;
+
+!!VRy1:Si^CB_000_Size_Flag_%V998_%V999_%V1000^;
+!!VRy20:Si^CB_000_Different_Size^;     (Check if size option is activated)
+
+!!if&y1=0/y20=1:;                       (Decide the size of the creature bank and save it)
+!!PO998:N?y20;                          (Check PO:N value)
+!!if&y20=0:;
+  !!VRy1:S0R9;
+
+  !!if&y1>=0/y1<=2:;
+  !!VRi^CB_000_Size_Flag_%V998_%V999_%V1000^:S1;
+  !!en:;
+
+  !!if&y1>=3/y1<=5:;
+  !!VRi^CB_000_Size_Flag_%V998_%V999_%V1000^:S2;
+  !!en:;
+
+  !!if&y1>=6/y1<=8:;
+  !!VRi^CB_000_Size_Flag_%V998_%V999_%V1000^:S3;
+  !!en:;
+
+  !!if&y1=9:;
+  !!VRi^CB_000_Size_Flag_%V998_%V999_%V1000^:S4;
+  !!en:;
+!!en:;
+!!en:;
+
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+!!OB998:T?y3 U?y4;                      (Get Type and Subtype)
+!!PO998:N?y20;                          (Check PO:N value)
+!!if&y20=1:;
+  !!VRz1:Ss^CB_000_CB_Cleared_Text^;
+  !!IF&1000:M1/z1;                 (Show Text that CB is abonndened
+!!FU:E;                            (Exit if it has already been visited)
+!!en:;
+
+!!if&y1=y3/y2=y4:;                      (Enter here your condition for the visited object)
+  !!VRy30:Si^CB_000_Battlefield_Type^;
+  !!UN&y30>=0:P68/0;                    (Temporaily Deactivate New Battlefield mod, so that custom BF can be showed)
+  **VRy31:Si^CB_000_Custom_Sound^;
+  **if&y31=1/1000:;
+    **VRz1:Ss^CB_000_CB_Sound^;
+    **SN:Pz1;                     (Play custom sound if option is activated)
+  **en:;
+  !!FU(CB_000_Calc_Guards_and_Set_Text):P3/v998/v999/v1000/y20; (Change Hint Text no Right Click Info)
+  !!VRz10:Ss^CB_000_CB_Name^;
+  !!VRz12:Ss^CB_000_CB_Greeting_Text^;
+  !!IF&1000:Q1^{%Z10}
+
+  %Z12
+
+  %Z11^;                               (Show message when you visit creature bank)
+  !!IF&-1000:V1/1;                     (Enable for AI Only)
+  !!VRi^CB_000_Fight_%Y1_%Y2^&1:S1;
+  !!VRi^CB_000_Fight_%Y1_%Y2^&-1:S0;
+  !!VRy5:Si^CB_000_Guards_Type_Slot_0^;
+  !!FU(CB_000_Calc_Guards_and_Set_Text):P1/v998/v999/v1000/y20; (Change Hint Text no Right Click Info)
+  !!PO998&-1:N2;
+  !!HE-1&1:Tv998/v999/v1000/y5/0;       (Trigger fight, fight monsters)
+!!en:;
+
+
+[sound trigger for custom sounds]
+*?SN;
+**VRy1:Si^CB_000_Custom_Sound^;**FU&y1=0:E; (Exit if option is disabled)
+**SN:S?z-10;                            (readout and store a sound file name that is played)
+**IF:L^%Z-10^;                          (With this command you can find out the name of th standard sound file from an object)
+**VRi:S0;
+**VRz-9:S^Mystery.wav^;                 (Write here the name of the standard sound file that needs to be silent)
+**VRi&z-10=z-9:S1;
+
+*?SN&i=1;
+**VRy1:Si^CB_000_Custom_Sound^;**FU&y1=0:E; (Exit if option is disabled)
+**VRy1:Si^CB_000_Mute_Sound^;
+**if&y1=1:;
+  **VRz-10:S^ZQUIET.WAV^;                 (nothing just silence sound to surpress sound)
+  **SN:Sz-10;                             (shut up *)
+  **VRi^CB_000_Mute_Sound^:S0;
+**en:;
+
+*?HM-1&1000;
+*Get heroes destination and check if it is your CB, if yes set flag to play sound*
+**VRi^Hero_Movement_X^:Sv998;
+**VRi^Hero_Movement_Y^:Sv999;
+**VRi^Hero_Movement_Z^:Sv1000;
+**OBv998/v999/v1000:T?y4 U?y5;
+**VRy10:Si^CB_000_Type_Number^;
+**VRy11:Si^CB_000_SubType_Number^;
+**VRi^CB_000_Mute_Sound^&y4=y10/y5=y11:S1;
+**VRy10:Si^CB_001_Type_Number^;
+**VRy11:Si^CB_001_SubType_Number^;
+**VRi^CB_001_Mute_Sound^&y4=y10/y5=y11:S1;
+
+
+*Фикс багов с озвучкой
+!?SN;
+!!SN:S?z10;             Узнать имя проигрываемого файла
+*!VRz9:S^MYSTERY.WAV^;
+!!VRz8:S^Mystery.wav^;
+!!FU&z10<>z8:E;         Выход, если неподходящий звук
+!!HE-1:P?y1/?y2/?y3;
+!!OBy1/y2/y3:T?y4;
+!!FU&y4<>63:E;
+!!OBy1/y2/y3:U?y5;
+!!FU&y5<>64/y5<>31:E;   Твердыню Титана учитываем тут, чтобы не дублировать код
+!!VRz10:S^DRAGOX.WAV^;  Устанавливаем звуковой файл
+!!SN:Sz10;              Играем
+
+
+****************************************************************************************************
+!?FU(OnBeforeBattleUniversal);          (Before any Battle)
+*Handle the look and type of the Battlefield here*
+
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+!!VRy10:Si^CB_000_Fight_%Y1_%Y2^;
+!!FU&y10=0:E;                           (Exit if it is not Creature Bank Fight)
+!!VRy1:Si^CB_000_Battlefield_Type^;     (Get ans set user choice)
+!!BA&y1>=0/y1<=25:By1;
+
+****************************************************************************************************
+!?FU(OnAfterBattleUniversal);           (After any Battle)
+*Handle CB Rewards here*
+
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+!!VRy10:Si^CB_000_Fight_%Y1_%Y2^;
+!!VRi^CB_000_Fight_%Y1_%Y2^:S0;         (Reset Flag for the Fight so that it does not happen again)
+!!FU&y10=0:E;                           (Exit if it is not Creature Bank Fight)
+
+!!HE-1:O?t;                             (Get Hero Owner)
+!!PO998&t>=0:N1;                        (Set PO Number if active Hero to 1)
+!!PO998&t=-1:N0;                        (Set PO Number to 0 if no active Hero)
+!!VRy60&t>=0:Sc;                        (Get current game day)
+!!VRi^CB_000_Day_Cleared_%V998_%V999_%V1000^&t>=0:Sy60; (Set day at which CB was cleared)
+
+!!VRy40:Si^CB_000_Battlefield_Type^;
+!!UN&y40>=0:P68/1;                      (Activate New Battlefield mod again)
+
+!!BA:O?y20/?y21;                        (Check Owner before Battle)
+!!VRy30:Si^CB_000_Attacker_Owner^;
+!!VRy30&-1000:Sy20;                     (Make Exception for AI)
+!!if&y20=y30:;                          (If Hero has same owner after fight means he has not lost the battle)
+
+ !!OW:Ry20/1/d10;     10 ртути
+ !!OW:Ry20/3/d10;     10 серы
+ !!OW:Ry20/6/d20000;  Золото
+ !!VRy5:S0 R3;        Случайное число
+ !!VR(artForReward:y):S6 *y5 +11;Настраивам артефакт в зависимости от числа
+ !!HE-1:A(artForReward);
+ !!VRy5:S0 R1;           Случайное число
+ !!VR(secArtForReward:y)&y5=0:S70;Настраивам артефакт в зависимости от числа
+ !!VR(secArtForReward:y)&y5=1:S98;
+ !!HE-1:A(secArtForReward);
+ !!HE-1:A108;         Заодно даем значек смелости
+
+ !!FU&-1000:E;
+
+ !!UN:N0/z2/(artForReward) N0/z3/(secArtForReward) N0/z4/108;
+ !!VRz1:S^Одержав победу над Бароном Ада, вы обнаруживаете %Z2, %Z3, %Z4, 10 Ртуть, 10 Сера и 20000 Золото.^;
+
+ ; конфигурируем диалог
+ !!IF:N8/(artForReward)/8/(secArtForReward)/8/108/1/10/3/10/36/20000/-1/0/-1/0;
+ ; показать диалог
+ !!IF:N1/^%z1^/?v1;
+
+!!en:;
+
+****************************************************************************************************
+!?FU(OnSetupBattlefield);
+*Handle Creature Position Here*
+
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+!!VRy10:Si^CB_000_Fight_%Y1_%Y2^;
+!!FU&y10=0:E;                           (Exit if it is not Creature Bank Fight)
+
+!!BA:O?y20/?y21;                        (Check Owner before Battle)
+!!VRi^CB_000_Attacker_Owner^:Sy20;
+
+!!HE-10:R4/0;                           (remove attackers tactics)
+!!BF:C;                                 (Clear Battlefield from Obstacles)
+
+!!BA:Q?y99;                             (Check for Quick Battle)
+
+!!BM0:N?y1 T?y2;
+!!BM0&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P57; (Rearange Position from own creatures)
+!!BM1:N?y1 T?y2;
+!!BM1&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P61;
+!!BM2:N?y1 T?y2;
+!!BM2&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P90;
+!!BM3:N?y1 T?y2;
+!!BM3&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P93;
+!!BM4:N?y1 T?y2;
+!!BM4&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P96;
+!!BM5:N?y1 T?y2;
+!!BM5&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P125;
+!!BM6:N?y1 T?y2;
+!!BM6&y1>0/y2<>145/y2<>146/y2<>147/y2<>148:P129;
+
+!!VRy70:Si^CB_000_Different_Size^;     (Check if option is activated)
+!!VRy3:Si^CB_000_Size_Flag_%V998_%V999_%V1000^;
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_0^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_0^;
+!!VRy2&y70=1:*y3;                       (Increase the number of guards if different size)
+!!VRy50:Si^CB_000_Guards_Type_Slot_Upgrade_0^; (1=yes 0=no chance to upgrade is 20%)
+!!VRy52:Si^CB_000_Upgrade_Flag_%V998_%V999_%V1000^; (Was Set 1=true, 2=false)
+!!if&y52=1/y50>0:;
+!!VRy1:Sy50;
+!!en:;
+!!BU&y1>=0/y2>0:Sy1/y2/15/1/0/0;        (Summon First creature number and type at position)
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_1^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_1^;
+!!VRy2&y70=1:*y3;                       (Multiplay number if increased size)
+!!BU&y1>=0/y2>0:Sy1/y2/185/1/1/0;       (Summon second guards)
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_2^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_2^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0/y99=0:Sy1/y2/172/1/2/0;
+!!BU&y1>=0/y2>0/y99=1:Sy1/y2/174/1/2/0; (Fix for Quick Combat because he cant summon there, idk why)
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_3^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_3^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0/y99=0:Sy1/y2/2/1/3/0;
+!!BU&y1>=0/y2>0/y99=1:Sy1/y2/12/1/3/0;  (Fix for Quick Combat because he cant summon there, idk why)
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_4^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_4^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0:Sy1/y2/100/1/4/0;
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_5^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_5^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0/y99=0:Sy1/y2/87/1/5/0;
+!!BU&y1>=0/y2>0/y99=1:Sy1/y2/133/1/5/0; (Fix for Quick Combat because he cant summon there, idk why)
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_6^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_6^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0:Sy1/y2/8/1/6/0;
+
+!!VRy1:Si^CB_000_Guards_Type_Slot_7^;
+!!VRy2:Si^CB_000_Guards_Number_Slot_7^;
+!!VRy2&y70=1:*y3;
+!!BU&y1>=0/y2>0:Sy1/y2/178/1/7/0;
+
+
+****************************************************************************************************
+!?FU(OnAdventureMapRightMouseClick);
+*Mouse Hover and Adventure Map Information about Creature Banks
+
+!!CM:F?y6 S?y2;
+!!FU|y6<>512/y2<>14:E;
+!!if&y6=512/y2=14:;                     (Right Mouse Click Push)
+
+!!VRy10:Si^CB_000_Type_Number^;
+!!VRy11:Si^CB_000_SubType_Number^;
+
+!!CM:P?y1/?y2/?y3;                      (Get courser position)
+!!OBy1/y2/y3:T?y4 U?y5; !!FU|y4<>y10/y5<>y11:E; (Get Type of Object and Exit if its not the Creature Bank)
+
+!!POy1/y2/y3:N?y4;                      (Check PN value)
+
+!!if&y4=2:;                             (If Cb has already been visited once)
+  !!CM:R0;
+  !!FU(CB_000_Calc_Guards_and_Set_Text):P2/y1/y2/y3/y4; (Set correct right click Information)
+!!en:;
+****************************************************************************************************
+
+!?FU(CB_000_Calc_Guards_and_Set_Text);
+*x1=1 means Right-Click info
+*x1=2 means no RC info
+*x5=PO value 0 means (Not Visited), 1 means (Visited), 2 means guards description
+
+!!re i/0/7/1:;                          (rewrite values)
+  !!VRy1:Si^CB_000_Guards_Type_Slot_%Vi^;
+    !!VRy50:Si^CB_000_Guards_Type_Slot_Upgrade_0^; (Check if Upgrade Slot funtion is enabled)
+    !!if&y50>0/i=0:;                        (Only run when it is possible that an upgrade stack can happen)
+      !!VRy52:Si^CB_000_Upgrade_Flag_%X2_%X3_%X4^; (Was Set 1=true, 2=false, check if it already has been set)
+      !!VRy51:S0R4;
+      *!VRy51:S4;
+      !!VRy51&y52=1:S4;                 (If Flag was already set)
+      !!VRy51&y52=2:S2;                 (If it already was set)
+      !!VRy1&y51=4:Sy50;         (Set y10 to new upgraded creature type number)
+      *!IF:M^Now %Y1  und y52 is %Y52  und y51 is %Y51 und y50 is %Y50^;
+      !!VRi^CB_000_Upgrade_Flag_%X2_%X3_%X4^&y51=4:S1; (Set flag to true, so that upgrade happened)
+      !!VRi^CB_000_Upgrade_Flag_%X2_%X3_%X4^&y51<>4:S2; (Set flag to false so that upgrade did not happen)
+    !!en:;
+  !!VRy2:Si^CB_000_Guards_Number_Slot_%Vi^;
+  !!re j/0/300/1:;
+    !!VRi^CB_000_Total_Creature_Type_%Vj^&j=y1/y2>0/y1>=0:Sdy2;
+  !!en:;
+!!en:;
+
+!!VRy10:Si^CB_000_Guards_Type_Slot_0^;
+!!VRy50:Si^CB_000_Guards_Type_Slot_Upgrade_0^; (Check if Upgrade Slot funtion is enabled)
+!!VRy52:Si^CB_000_Upgrade_Flag_%X2_%X3_%X4^; (Was Set 1=true, 2=false, check if it already has been set)
+!!if&y50>0/y52=1:;                      (Only run when it is possible that an upgrade stack can happen)
+  !!VRy10:Sy50;                  (Set y10 to new upgraded creature type number)
+!!en:;
+
+!!VRy11:Si^CB_000_Guards_Type_Slot_1^;
+!!VRy12:Si^CB_000_Guards_Type_Slot_2^;
+!!VRy13:Si^CB_000_Guards_Type_Slot_3^;
+!!VRy14:Si^CB_000_Guards_Type_Slot_4^;
+!!VRy15:Si^CB_000_Guards_Type_Slot_5^;
+!!VRy16:Si^CB_000_Guards_Type_Slot_6^;
+!!VRy18:Si^CB_000_Guards_Type_Slot_7^;
+
+!!VRy20&y10>=0:Si^CB_000_Guards_Number_Slot_0^;
+!!VRy21&y11>=0:Si^CB_000_Guards_Number_Slot_1^;
+!!VRy22&y12>=0:Si^CB_000_Guards_Number_Slot_2^;
+!!VRy23&y13>=0:Si^CB_000_Guards_Number_Slot_3^;
+!!VRy24&y14>=0:Si^CB_000_Guards_Number_Slot_4^;
+!!VRy25&y15>=0:Si^CB_000_Guards_Number_Slot_5^;
+!!VRy26&y16>=0:Si^CB_000_Guards_Number_Slot_6^;
+!!VRy27&y18>=0:Si^CB_000_Guards_Number_Slot_7^;
+
+!!VRy28:Sy20+y21+y22+y23+y24+y25+y26+y27;   (Get Total Amount of Creatures in the CB)
+!!VRy60:Si^CB_000_Size_Flag_%X2_%X3_%X4^;
+!!VRy70:Si^CB_000_Different_Size^;     (Check if option is activated)
+!!VRy28&y70=1:*y60;
+
+!!FU(CB_000_Sorting_Slots):Px2/x3/x4/?y17; (Pass Coordinates from CB)
+
+*!IF:M^1Size %Y70  and %Y50 und y28 is %Y28  and y17 is %Y17^;
+!!VRy17|y10=-1/y11=-1/y12=-1/y13=-1/y14=-1/y15=-1/y16=-1/y18=-1:-1; (Substract one if -1 is found)
+
+*!IF:M^2Size %Y70  and %Y50 und y28 is %Y28  and y17 is %Y17^;
+
+  !!VRi:S0;
+  !!VRk:S0;
+
+  !!re i/0/300/1:;
+    !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy10:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y10^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+*!IF:M^Zero y1 is %Y1  and y28 is %Y28 and y60 is %Y60^;
+  !!VRz1&y1>=1/y1<=4:S^мало^; !!VRy30&y1>=1/y1<=4:S1; !!VRy31&y1>=1/y1<=4:S4;
+  !!VRz1&y1>=5/y1<=9:S^несколько^; !!VRy30&y1>=5/y1<=9:S5; !!VRy31&y1>=5/y1<=9:S9;
+  !!VRz1&y1>=10/y1<=19:S^группа^; !!VRy30&y1>=10/y1<=19:S10; !!VRy31&y1>=10/y1<=19:S19;
+  !!VRz1&y1>=20/y1<=49:S^много^; !!VRy30&y1>=20/y1<=49:S20;!!VRy31&y1>=20/y1<=49:S49;
+  !!VRz1&y1>=50/y1<=99:S^толпа^; !!VRy30&y1>=50/y1<=99:S50;!!VRy31&y1>=50/y1<=99:S99;
+  !!VRz1&y1>=100/y1<=249:S^орда^; !!VRy30&y1>=100/y1<=249:S100;!!VRy31&y1>=100/y1<=249:S249;
+  !!VRz1&y1>=250/y1<=499:S^туча^; !!VRy30&y1>=250/y1<=499:S250;!!VRy31&y1>=250/y1<=499:S499;
+  !!VRz1&y1>=500/y1<=999:S^тьма^; !!VRy30&y1>=500/y1<=999:S500;!!VRy31&y1>=500/y1<=999:S999;
+  !!VRz1&y1>=1000:S^легион^; !!VRy30&y1>=1000:S1000;!!VRy31&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+    !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+     !!VRy11:Si;
+     !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y11^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+*!IF:M^First y1 is %Y1^;
+  !!VRz2&y1>=1/y1<=4:S^мало^; !!VRy32&y1>=1/y1<=4:S1; !!VRy33&y1>=1/y1<=4:S4;
+  !!VRz2&y1>=5/y1<=9:S^несколько^; !!VRy32&y1>=5/y1<=9:S5; !!VRy33&y1>=5/y1<=9:S9;
+  !!VRz2&y1>=10/y1<=19:S^группа^; !!VRy32&y1>=10/y1<=19:S10; !!VRy33&y1>=10/y1<=19:S19;
+  !!VRz2&y1>=20/y1<=49:S^много^; !!VRy32&y1>=20/y1<=49:S20;!!VRy33&y1>=20/y1<=49:S49;
+  !!VRz2&y1>=50/y1<=99:S^толпа^; !!VRy32&y1>=50/y1<=99:S50;!!VRy33&y1>=50/y1<=99:S99;
+  !!VRz2&y1>=100/y1<=249:S^орда^; !!VRy32&y1>=100/y1<=249:S100;!!VRy33&y1>=100/y1<=249:S249;
+  !!VRz2&y1>=250/y1<=499:S^туча^; !!VRy32&y1>=250/y1<=499:S250;!!VRy33&y1>=250/y1<=499:S499;
+  !!VRz2&y1>=500/y1<=999:S^тьма^; !!VRy32&y1>=500/y1<=999:S500;!!VRy33&y1>=500/y1<=999:S999;
+  !!VRz2&y1>=1000:S^легион^; !!VRy32&y1>=1000:S1000;!!VRy33&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy12:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y12^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+*!IF:M^Second y1 is %Y1^;
+  !!VRz3&y1>=1/y1<=4:S^мало^; !!VRy34&y1>=1/y1<=4:S1; !!VRy35&y1>=1/y1<=4:S4;
+  !!VRz3&y1>=5/y1<=9:S^несколько^; !!VRy34&y1>=5/y1<=9:S5; !!VRy35&y1>=5/y1<=9:S9;
+  !!VRz3&y1>=10/y1<=19:S^группа^; !!VRy34&y1>=10/y1<=19:S10; !!VRy35&y1>=10/y1<=19:S19;
+  !!VRz3&y1>=20/y1<=49:S^много^; !!VRy34&y1>=20/y1<=49:S20;!!VRy35&y1>=20/y1<=49:S49;
+  !!VRz3&y1>=50/y1<=99:S^толпа^; !!VRy34&y1>=50/y1<=99:S50;!!VRy35&y1>=50/y1<=99:S99;
+  !!VRz3&y1>=100/y1<=249:S^орда^; !!VRy34&y1>=100/y1<=249:S100;!!VRy35&y1>=100/y1<=249:S249;
+  !!VRz3&y1>=250/y1<=499:S^туча^; !!VRy34&y1>=250/y1<=499:S250;!!VRy35&y1>=250/y1<=499:S499;
+  !!VRz3&y1>=500/y1<=999:S^тьма^; !!VRy34&y1>=500/y1<=999:S500;!!VRy35&y1>=500/y1<=999:S999;
+  !!VRz3&y1>=1000:S^легион^; !!VRy34&y1>=1000:S1000;!!VRy35&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy13:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y13^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+  !!VRz4&y1>=1/y1<=4:S^мало^; !!VRy36&y1>=1/y1<=4:S1; !!VRy37&y1>=1/y1<=4:S4;
+  !!VRz4&y1>=5/y1<=9:S^несколько^; !!VRy36&y1>=5/y1<=9:S5; !!VRy37&y1>=5/y1<=9:S9;
+  !!VRz4&y1>=10/y1<=19:S^группа^; !!VRy36&y1>=10/y1<=19:S10; !!VRy37&y1>=10/y1<=19:S19;
+  !!VRz4&y1>=20/y1<=49:S^много^; !!VRy36&y1>=20/y1<=49:S20;!!VRy37&y1>=20/y1<=49:S49;
+  !!VRz4&y1>=50/y1<=99:S^толпа^; !!VRy36&y1>=50/y1<=99:S50;!!VRy37&y1>=50/y1<=99:S99;
+  !!VRz4&y1>=100/y1<=249:S^орда^; !!VRy36&y1>=100/y1<=249:S100;!!VRy37&y1>=100/y1<=249:S249;
+  !!VRz4&y1>=250/y1<=499:S^туча^; !!VRy36&y1>=250/y1<=499:S250;!!VRy37&y1>=250/y1<=499:S499;
+  !!VRz4&y1>=500/y1<=999:S^тьма^; !!VRy36&y1>=500/y1<=999:S500;!!VRy37&y1>=500/y1<=999:S999;
+  !!VRz4&y1>=1000:S^легион^; !!VRy36&y1>=1000:S1000;!!VRy37&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy14:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y14^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+  !!VRz5&y1>=1/y1<=4:S^мало^; !!VRy38&y1>=1/y1<=4:S1; !!VRy39&y1>=1/y1<=4:S4;
+  !!VRz5&y1>=5/y1<=9:S^несколько^; !!VRy38&y1>=5/y1<=9:S5; !!VRy39&y1>=5/y1<=9:S9;
+  !!VRz5&y1>=10/y1<=19:S^группа^; !!VRy38&y1>=10/y1<=19:S10; !!VRy39&y1>=10/y1<=19:S19;
+  !!VRz5&y1>=20/y1<=49:S^много^; !!VRy38&y1>=20/y1<=49:S20;!!VRy39&y1>=20/y1<=49:S49;
+  !!VRz5&y1>=50/y1<=99:S^толпа^; !!VRy38&y1>=50/y1<=99:S50;!!VRy39&y1>=50/y1<=99:S99;
+  !!VRz5&y1>=100/y1<=249:S^орда^; !!VRy38&y1>=100/y1<=249:S100;!!VRy39&y1>=100/y1<=249:S249;
+  !!VRz5&y1>=250/y1<=499:S^туча^; !!VRy38&y1>=250/y1<=499:S250;!!VRy39&y1>=250/y1<=499:S499;
+  !!VRz5&y1>=500/y1<=999:S^тьма^; !!VRy38&y1>=500/y1<=999:S500;!!VRy39&y1>=500/y1<=999:S999;
+  !!VRz5&y1>=1000:S^легион^; !!VRy38&y1>=1000:S1000;!!VRy39&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy15:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y15^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+  !!VRz6&y1>=1/y1<=4:S^мало^; !!VRy40&y1>=1/y1<=4:S1; !!VRy41&y1>=1/y1<=4:S4;
+  !!VRz6&y1>=5/y1<=9:S^несколько^; !!VRy40&y1>=5/y1<=9:S5; !!VRy41&y1>=5/y1<=9:S9;
+  !!VRz6&y1>=10/y1<=19:S^группа^; !!VRy40&y1>=10/y1<=19:S10; !!VRy41&y1>=10/y1<=19:S19;
+  !!VRz6&y1>=20/y1<=49:S^много^; !!VRy40&y1>=20/y1<=49:S20;!!VRy41&y1>=20/y1<=49:S49;
+  !!VRz6&y1>=50/y1<=99:S^толпа^; !!VRy40&y1>=50/y1<=99:S50;!!VRy41&y1>=50/y1<=99:S99;
+  !!VRz6&y1>=100/y1<=249:S^орда^; !!VRy40&y1>=100/y1<=249:S100;!!VRy41&y1>=100/y1<=249:S249;
+  !!VRz6&y1>=250/y1<=499:S^туча^; !!VRy40&y1>=250/y1<=499:S250;!!VRy41&y1>=250/y1<=499:S499;
+  !!VRz6&y1>=500/y1<=999:S^тьма^; !!VRy40&y1>=500/y1<=999:S500;!!VRy41&y1>=500/y1<=999:S999;
+  !!VRz6&y1>=1000:S^легион^; !!VRy40&y1>=1000:S1000;!!VRy41&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy16:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y16^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+  !!VRz7&y1>=1/y1<=4:S^мало^; !!VRy42&y1>=1/y1<=4:S1; !!VRy43&y1>=1/y1<=4:S4;
+  !!VRz7&y1>=5/y1<=9:S^несколько^; !!VRy42&y1>=5/y1<=9:S5; !!VRy43&y1>=5/y1<=9:S9;
+  !!VRz7&y1>=10/y1<=19:S^группа^; !!VRy42&y1>=10/y1<=19:S10; !!VRy43&y1>=10/y1<=19:S19;
+  !!VRz7&y1>=20/y1<=49:S^много^; !!VRy42&y1>=20/y1<=49:S20;!!VRy43&y1>=20/y1<=49:S49;
+  !!VRz7&y1>=50/y1<=99:S^толпа^; !!VRy42&y1>=50/y1<=99:S50;!!VRy43&y1>=50/y1<=99:S99;
+  !!VRz7&y1>=100/y1<=249:S^орда^; !!VRy42&y1>=100/y1<=249:S100;!!VRy43&y1>=100/y1<=249:S249;
+  !!VRz7&y1>=250/y1<=499:S^туча^; !!VRy42&y1>=250/y1<=499:S250;!!VRy43&y1>=250/y1<=499:S499;
+  !!VRz7&y1>=500/y1<=999:S^тьма^; !!VRy42&y1>=500/y1<=999:S500;!!VRy43&y1>=500/y1<=999:S999;
+  !!VRz7&y1>=1000:S^легион^; !!VRy42&y1>=1000:S1000;!!VRy43&y1>=1000:S4000;
+!!en:;
+
+  !!VRi:S0;
+  !!re i/k/300/1:;
+   !!VRk:Si+1;
+    !!VRy80:Si^CB_000_Total_Creature_Type_%Vi^;
+    !!if&y80>0:;
+    !!VRy18:Si;
+    !!br:;
+    !!en:;
+  !!en:;
+
+!!VRy1:Si^CB_000_Total_Creature_Type_%Y18^; !!VRy1&y70=1:*y60;
+!!if&y1>0:;
+  !!VRz8&y1>=1/y1<=4:S^мало^; !!VRy44&y1>=1/y1<=4:S1; !!VRy45&y1>=1/y1<=4:S4;
+  !!VRz8&y1>=5/y1<=9:S^несколько^; !!VRy44&y1>=5/y1<=9:S5; !!VRy45&y1>=5/y1<=9:S9;
+  !!VRz8&y1>=10/y1<=19:S^группа^; !!VRy44&y1>=10/y1<=19:S10; !!VRy45&y1>=10/y1<=19:S19;
+  !!VRz8&y1>=20/y1<=49:S^много^; !!VRy44&y1>=20/y1<=49:S20;!!VRy45&y1>=20/y1<=49:S49;
+  !!VRz8&y1>=50/y1<=99:S^толпа^; !!VRy44&y1>=50/y1<=99:S50;!!VRy45&y1>=50/y1<=99:S99;
+  !!VRz8&y1>=100/y1<=249:S^орда^; !!VRy44&y1>=100/y1<=249:S100;!!VRy45&y1>=100/y1<=249:S249;
+  !!VRz8&y1>=250/y1<=499:S^туча^; !!VRy44&y1>=250/y1<=499:S250;!!VRy45&y1>=250/y1<=499:S499;
+  !!VRz8&y1>=500/y1<=999:S^тьма^; !!VRy44&y1>=500/y1<=999:S500;!!VRy45&y1>=500/y1<=999:S999;
+  !!VRz8&y1>=1000:S^легион^; !!VRy44&y1>=1000:S1000;!!VRy45&y1>=1000:S4000;
+!!en:;
+
+
+!!VRz9&y28>=1/y28<=4:S^мало^; !!VRy50&y28>=1/y28<=4:S1; !!VRy51&y28>=1/y28<=4:S4;
+!!VRz9&y28>=5/y28<=9:S^несколько^; !!VRy50&y28>=5/y28<=9:S5; !!VRy51&y28>=5/y28<=9:S9;
+!!VRz9&y28>=10/y28<=19:S^группа^; !!VRy50&y28>=10/y28<=19:S10; !!VRy51&y28>=10/y28<=19:S19;
+!!VRz9&y28>=20/y28<=49:S^много^; !!VRy50&y28>=20/y28<=49:S20;!!VRy51&y28>=20/y28<=49:S49;
+!!VRz9&y28>=50/y28<=99:S^толпа^; !!VRy50&y28>=50/y28<=99:S50;!!VRy51&y28>=50/y28<=99:S99;
+!!VRz9&y28>=100/y28<=249:S^орда^; !!VRy50&y28>=100/y28<=249:S100;!!VRy51&y28>=100/y28<=249:S249;
+!!VRz9&y28>=250/y28<=499:S^туча^; !!VRy50&y28>=250/y28<=499:S250;!!VRy51&y28>=250/y28<=499:S499;
+!!VRz9&y28>=500/y28<=999:S^тьма^; !!VRy50&y28>=500/y28<=999:S500;!!VRy51&y28>=500/y28<=999:S999;
+!!VRz9&y28>=1000:S^легион^; !!VRy50&y28>=1000:S1000;!!VRy51&y28>=1000:S4000;
+
+
+!!UN&y17=1:N3/-1/y10/2;
+!!UN&y17=2:N3/-1/y10/2 N3/-2/y11/2;
+!!UN&y17=3:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2;
+!!UN&y17=4:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2 N3/-4/y13/2;
+!!UN&y17=5:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2 N3/-4/y13/2 N3/-5/y14/2;
+!!UN&y17=6:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2 N3/-4/y13/2 N3/-5/y14/2 N3/-6/y15/2;
+!!UN&y17=7:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2 N3/-4/y13/2 N3/-5/y14/2 N3/-6/y15/2 N3/-7/y16/2;
+!!UN&y17=8:N3/-1/y10/2 N3/-2/y11/2 N3/-3/y12/2 N3/-4/y13/2 N3/-5/y14/2 N3/-6/y15/2 N3/-7/y16/2 N3/-8/y18/2;
+
+!!VRv1:Si^CB_000_Type_Number^;
+!!VRv2:Si^CB_000_SubType_Number^;
+!!VRz10:Ss^CB_000_CB_Name^;
+
+
+*******************************
+!!if&y17=1:;                            (One different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1.^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1.^;
+!!en:;
+*******************************
+
+*******************************
+!!if&y17=2:;                            (Two different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1 и %Z2 {(%Y32-%Y33)} %Z-2.^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1 и %Z2 {(%Y32-%Y33)} %Z-2.^;
+!!en:;
+*******************************
+
+*******************************
+!!if&y17=3:;                            (Three different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2 и %Z3 {(%Y34-%Y35)} %Z-3.^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2 и %Z3 {(%Y34-%Y35)} %Z-3.^;
+!!en:;
+*******************************
+
+*******************************
+!!if&y17=4:;                            (Four different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3 и %Z4 {(%Y36-%Y37)} %Z-4.^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3 и %Z4 {(%Y36-%Y37)} %Z-4.^;
+!!en:;
+*******************************
+
+*******************************
+!!if&y17=5:;                            (Five different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3, %Z4 {(%Y36-%Y37)} %Z-4 и %Z5 {(%Y38-%Y39)} %Z-5^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3, %Z4 {(%Y36-%Y37)} %Z-4 и %Z5 {(%Y38-%Y39)} %Z-5^;
+!!en:;
+*******************************
+
+*******************************
+!!if&y17=6:;                            (Six different Creatures)
+!!if&x1=1:;
+ !!VRz1:Ss^CB_000_CB_Name^;
+ !!VRz11:S^%Z1 (Не посещено)^;
+!!en:;
+!!VRz11&x1=2:S^%Z10
+
+Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3, %Z4 {(%Y36-%Y37)} %Z-4, %Z5 {(%Y38-%Y39)} %Z-5 и %Z6 {(%Y40-%Y41)} %Z-6.^;
+!!IF&x1=2:M1/4/11;
+!!VRz11&x1=3:S^Охраняется %Z1 {(%Y30-%Y31)} %Z-1, %Z2 {(%Y32-%Y33)} %Z-2, %Z3 {(%Y34-%Y35)} %Z-3, %Z4 {(%Y36-%Y37)} %Z-4, %Z5 {(%Y38-%Y39)} %Z-5 и %Z6 {(%Y40-%Y41)} %Z-6.^;
+!!en:;
+*******************************
+
+!!VRz1:Ss^CB_000_CB_Name^;
+!!VRz1&x5=0:S^%Z1 (Не посещено)^;
+!!HTv1/v2&x5=0:P0/z1;
+!!VRz1&x5=1:S^%Z1 (Посещено)^;
+!!HTv1/v2&x5=1:P1/z1;
+!!HTv1/v2&x5<>0:P2/z11;
+
+!!re i/0/300/1:;
+  !!VRi^CB_000_Total_Creature_Type_%Vi^:S0;
+!!en:;
+
+
+****************************************************************************************************
+* Replace Objects when map starts
+!?FU(OnAfterErmInstructions);
+
+!!UN:P651/?v1; Блокировка мега-банков
+!!FU&v1=1:E; Только, если отключена опция
+
+!!UN:C6919480/4/?y10;
+!!UN:Cy10/128980/1/?y12;
+!!FU&y12<>114:E;                        [Заменять объекты можно только на случайных картах]
+
+!!UN:C4893167/1/233;                    [deleting the sound in the delete object function]
+!!UN:C4893168/4/95;
+
+!!VRi:S0;
+!!VRj:S0;
+
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+
+!!VRy3:Si^CB_000_Replace_0_Type_Number^;
+!!VRy4:Si^CB_000_Replace_0_SubType_Number^;
+!!VRy5:Si^CB_000_Replace_0_Percentage^;
+!!VRy7:Si^CB_000_Replace_0_X_Offset^;
+!!UN:Uy3/-1/?y6;
+!!VRv1:S-1;
+!!DO(CB_000_Replace)/1/y6/1:Py3/y4/y1/y2/y5/y7;
+
+!!UN:C4893167/4/3834547046;             [restoring the source code of the sound]
+
+********************************************************************************
+!?FU(CB_000_Replace);
+
+!!UN:Ux1/-1/-1/1;
+
+!!VRy2:S0 T99;                          (Calc chance to replace)
+!!if&x5>y2:;
+!!OBv1/v2/v3:T?y5 U?y6;                 (Get Type and Subtype)
+
+!!VRy30:Sv1 +x6;                         (Offset in x)
+!!UN:X?y10/?y20; !!VRy10:-1;            Get Map size to prevent wrong placement of x-coordinate
+
+!!if&x1=y5/x2=y6/y30<=y10/y30>=0:;      If type and subtype match and if object is not outside of map
+  *!OBv1/v2/v3&x1=y5/x2=y6:B;           (Remove a description hint for an object.)
+  !!UN:Ov1/v2/v3/0/0;                   (delete old object)
+  !!OBv1/v2/v3:C-1;                     (Clear Control Word of deleted Object)
+  !!VRv1:+x6;                           (Offset in x)
+  !!UN:Iv1/v2/v3/x3/x4/x3/x4/-1/0;      place new object
+  !!POv1/v2/v3:N0;                      Set Control word of object to zero
+  !!VRi^CB_000_Set_Flag_%V1_%V2_%V3^:S1;
+!!en:;
+!!en:;
+
+
+!?FU(CB_000_Sorting_Slots);             (Thanks to wessonsm for code :))
+
+!!re i/0/7/1:;                          (rewrite values)
+  !!VRy1:Si^CB_000_Guards_Type_Slot_%Vi^;
+    !!VRy50:Si^CB_000_Guards_Type_Slot_Upgrade_0^; (Check if Upgrade Slot funtion is enabled)
+    !!VRy52:Si^CB_000_Upgrade_Flag_%X1_%X2_%X3^; (Was Set 1=true, 2=false, check if it already has been set)
+    !!VRy1&y50>0/y52=1/i=0/y1>=0:Sy50; (Set new Upgrade)
+  !!VRi^CB_000_Sorting_Slots_Element_%Vi^:Sy1;
+!!en:;
+!!re i/0/6/1:;                          (compare the value of each element with all subsequent)
+  !!VRk:Si+1;
+  !!re j/k/7/1:;
+    !!VRy2:Si^CB_000_Sorting_Slots_Element_%Vi^;
+    !!VRy3:Si^CB_000_Sorting_Slots_Element_%Vj^;
+    !!if&y2=y3:;                        (if the same, swap Element j with Element i+1)
+      !!VRy4:Si^CB_000_Sorting_Slots_Element_%Vk^;
+      !!VRi^CB_000_Sorting_Slots_Element_%Vk^:Sy3;
+      !!VRi^CB_000_Sorting_Slots_Element_%Vj^:Sy4;
+      !!br:;
+    !!en:;
+  !!en:;
+!!en:;                                  (so matching items now go in a row)
+!!VRy10:S1;                             (there is always at least one different item)
+!!re i/0/6/1:;
+  !!VRj:Si+1;
+  !!VRy1:Si^CB_000_Sorting_Slots_Element_%Vi^;
+  !!VRy2:Si^CB_000_Sorting_Slots_Element_%Vj^;
+  !!if&y1<>y2:;
+    !!VRy10:+1;
+  !!en:;
+!!en:;
+!!VRx4:Sy10;
+
+
+!#VA(x:x) (y:x) (z:x) (objType:x) (objSubtype:x);
+
+!?FU(OnAdvMapTileHint);
+
+!!SN:X?y1/?y2/?y3/?y4/?y5;
+!!VRy10:Si^CB_000_Type_Number^;
+!!VRy11:Si^CB_000_SubType_Number^;
+!!if&y4=y10/y5=y11:;
+  !!OBy1/y2/y3:T?y4 U?y5;
+  !!FU|y4<>y10/y5<>y11:E;                 (Get Type of Object and Exit if its not the Creature Bank)
+  !!POy1/y2/y3:N?y6;                      (Check PN value 2 means has already been visited but not cleared)
+  !!FU(CB_000_Calc_Guards_and_Set_Text):P1/y1/y2/y3/y6; (After right click information set correct hint text)
+!!en:;
+
+
+!?FU(OnGameEnter);                      [Fix for the battle replay plugin, so after loading the save the next fight will not give reward]
+!!VRi^CB_000_Attacker_Owner^:S0;
+!!VRy1:Si^CB_000_Type_Number^;
+!!VRy2:Si^CB_000_SubType_Number^;
+!!VRi^CB_000_Fight_%Y1_%Y2^:S0;         [Reset CB fight variable after loading a game]
+
+**************************************TEST Section**************************************************
+
